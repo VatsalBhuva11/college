@@ -1,0 +1,10 @@
+0011 0010 0000 0000 ;the address where the program begins: x3200
+0101 010 010 1 00000 ;clear R2
+0001 010 010 0 00 100 ;add R4 to R2, put result in R2
+0001 101 101 1 11111 ;subtract 1 from R5, put result in R5
+0000 001 111111101 ;branch to location x3201 if the result is zero or positive
+1111 0000 00100101 ;halt
+
+
+
+

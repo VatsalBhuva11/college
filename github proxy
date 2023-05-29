@@ -1,0 +1,4 @@
+git config --global https.proxy "https://172.31.2.3:8080/"
+git config --global http.proxy "http://172.31.2.3:8080/"
+
+git config --global https.proxy https://IIT2022004:Cristianocr7#@172.31.2.3:8080

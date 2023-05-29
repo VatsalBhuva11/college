@@ -1,0 +1,7 @@
+- PERMUTATION PROBLEM
+given a set of n distinct elements and an integer r, write a code to compute all r element permutations of the elements of the set L
+input: L (list of elements), r is an integer
+(using recursion)
+
+-
+given a set of values containing denominations, find the number of possible ways of creating a value V using the elements of the set
