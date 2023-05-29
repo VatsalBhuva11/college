@@ -1,0 +1,3 @@
+ADD dest, src, val (val can be an immediate value like xA = 10)
+.ORIG x3000 starts the program at mem address 3000
+AND R1,R1,x0 assigns the AND of R1 and 0, to R1. so R1 gets initialized with 0

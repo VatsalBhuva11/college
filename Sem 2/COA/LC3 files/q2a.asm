@@ -1,0 +1,5 @@
+.ORIG x3150
+AND R5, R5, x0;
+ADD R5, R5, xFFFD;
+HALT
+.END

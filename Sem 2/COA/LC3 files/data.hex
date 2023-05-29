@@ -1,0 +1,20 @@
+3100 ;data starts at memory location x3100
+3107 ;the ten numbers we want to add begin here
+2819
+0110
+0310
+0110
+1110
+11B1
+0019
+0007
+0004
+
+
+
+
+
+
+
+
+
