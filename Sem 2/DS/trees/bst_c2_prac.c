@@ -24,6 +24,7 @@ tree insert(tree root, int data){
 }
 
 tree delete(tree *root, int data){
+    if (*root == NULL) return NULL;
     if (data < (*root)->data){
         return delete(&((*root)->left), data);
     }
@@ -63,6 +64,34 @@ tree delete(tree *root, int data){
     }
 }
 
+int count(tree root){
+    if (root == NULL) return 0;
+    else{
+        return count(root->left) + 1 + count(root->right);
+    }
+}
+
+int sum(tree root, int s){
+    if (root == NULL) return 0;
+    else{
+        int ans = root->data;
+        ans += sum(root->left, 0);
+        ans += sum(root->right, 0);
+        return ans;
+    }
+}
+
+void depth(tree root, int count, int *max){
+    if (root == NULL) return;
+    else{
+        depth(root->left, count+1, max);
+        if (count > *max) *max = count;
+        depth(root->right, count + 1, max);
+        if (count > *max) *max = count;
+        
+    }   
+}
+
 void preorder(tree root){
     if (root == NULL) return;
     else{
@@ -98,12 +127,21 @@ int main(){
     }
     inorder(root);  printf("\n");
     int num;
+
+    int max = -__INT_MAX__;
+    printf("Number of nodes: %d\n", count(root));
+    printf("Sum of nodes: %d\n", sum(root, 0));
+    depth(root, 0, &max);
+    printf("Depth of tree: %d\n", max);
     printf("Enter element to delete: ");
     scanf("%d", &num);
     tree deleted = delete(&root, num);
     //note: deleted->data now contains the data of the replaced node
-    printf("inorder tree after deleting %d: ",num);
-    inorder(root); printf("\n");
+    if (deleted == NULL) printf("Element not present in the tree.\n");
+    else{
+        printf("inorder tree after deleting %d: ",num);
+        inorder(root); printf("\n");
+    }
     printf("Enter element to insert: ");
     scanf("%d", &num);
     root = insert(root, num);
