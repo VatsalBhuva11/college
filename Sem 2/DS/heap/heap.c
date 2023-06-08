@@ -31,44 +31,46 @@ void insert(int element){
     }
 }
 
-void kthLargest(int arr[], int k, int n){
-    for (int i = 1; i<k; i++){
-        arr[1] = 0;
-        int temp = 1;
-        while (temp < n){
-            if (arr[2*temp] > arr[2*temp+1]){
-                swap(&arr[2*temp], &arr[temp]);
-                temp = temp*2;
-            }
-            else{
-                swap(&arr[2*temp+1], &arr[temp]);
-                temp = (temp*2)+1;
-            }
-        }
-    }
-}
-
-void deleteMax(){
+int deleteMax(){
     int temp = 1; int maxElem = heap[1];
     heap[1] = heap[n]; //removed max, replaced last element instead.
     n--;
-    while (temp < n/2){
-        if (heap[2*temp] > heap[2*temp+1]){
+    while (temp*2 <= n){
+        if (temp*2 == n){
             if (heap[temp] < heap[2*temp]){
                 swap(&heap[temp], &heap[2*temp]);
-                temp = temp*2;
             }
-            else break;
+            temp = temp*2;
         }
         else{
-            if (heap[temp] < heap[2*temp+1]){
-                swap(&heap[temp], &heap[2*temp+1]);
-                temp = temp*2+1;
+            if (heap[2*temp] > heap[2*temp+1]){
+                if (heap[temp] < heap[2*temp]){
+                    swap(&heap[temp], &heap[2*temp]);
+                    temp = temp*2;
+                }
+                else break;
             }
-            else break;
+            else{
+                if (heap[temp] < heap[2*temp+1]){
+                    swap(&heap[temp], &heap[2*temp+1]);
+                    temp = temp*2+1;
+                }
+                else break;
+            }
         }
     }
+    return maxElem;
 }
+
+int kthLargest(int arr[], int k, int n){
+    int ans;
+    for (int i = 1; i<k; i++){
+        ans = deleteMax();
+    }
+    return ans;
+}
+
+
 
 void printHeap(){
     for (int i = 1; i<=n; i++){
@@ -90,11 +92,10 @@ int main(){
     scanf("%d", &num);
     insert(num);
     printf("Heap after inserting %d: ", num);
-    printf("%d\n", n);
     printHeap();
 
-    deleteMax();
-    printf("Heap after deleting max: ");
+    int maxElem = deleteMax();
+    printf("Heap after deleting max (%d): ",maxElem);
     printHeap();
 
     printf("Enter value of k to find kth largest: ");
