@@ -37,7 +37,9 @@ tree delete(tree *root, int data){
             tree deleted = *root;
             if ((*root)->right == NULL && (*root)->left == NULL){
                 *root = NULL;
-                return deleted;
+                //changing *root itself wont affect deleted. this is because deleted will still point to the content
+                //that *root initially had. that content remains unaffected, but now *root points to NULL.
+                return deleted; 
             }
             else if((*root)->left == NULL){
                 *root = (*root)->right;
@@ -50,6 +52,9 @@ tree delete(tree *root, int data){
                     temp = temp->right;
                 }
                 (*root)->data = temp->data;
+                //the above line changes the data of deleted as well. this is because *root and deleted point to the 
+                //same struct node (even if they have separate mem. addresses). but changing the value of that struct
+                //using *root will be seen in the deleted pointer as well, since it's a pointer.
                 if (temp == parent){ //if no right subtree of left child
                     (*root)->left = temp->left;
                     return deleted;
