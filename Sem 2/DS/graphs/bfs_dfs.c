@@ -14,7 +14,9 @@ struct queueNode{
 };
 typedef struct queueNode *queue;
 queue front = NULL, rear = NULL;
+
 int visited[N];
+int parent[N];
 
 struct node *create(int data){
     struct node *new = (struct node *)malloc(sizeof(struct node));
@@ -114,6 +116,7 @@ void printStack(){
     printf("\n");
 }
 
+
 int pop(){
     if (top == -1){
         printf("Stack is empty.\n");
@@ -141,9 +144,20 @@ void bfs(int startNode){
         while (inAdjList != NULL && visited[inAdjList->data] != 1){
             enqueue(&front, &rear, inAdjList->data);
             visited[inAdjList->data] = 1;
+            parent[inAdjList->data] = deleted;
             inAdjList = inAdjList->next;
         }
     }
+}
+
+void shortestDistance(int node1, int startNode){
+    int count = 0;
+    while (node1 != startNode){
+        count++;
+        printf("%d -> ", node1);
+        node1 = parent[node1];
+    }
+    printf("%d , distance is: %d edges\n\n", startNode, count);
 }
 
 void rdfs(int startNode){
@@ -204,6 +218,13 @@ int main(){
 
     printf("BFS traversal with starting node %d:\n", startNode);
     bfs(startNode); printf("\n\n");
+
+    printf("Enter node to find shortest distance between root and node:\n");
+    int node1;
+    scanf("%d", &node1);
+    shortestDistance(node1, startNode);
+    
+    
 
     for (int i = 1; i<=vertices; i++) {
         visited[i] = 0;
