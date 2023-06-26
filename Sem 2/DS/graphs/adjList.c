@@ -29,14 +29,16 @@ void printList(struct node *arr[], int vertices){
     for (int i = 1; i<=vertices; i++){
         struct node *temp = arr[i];
         printf("%d: ", i);
-        while (temp->next != NULL){
-            printf("%d->", temp->data);
-            temp = temp->next;
+        if (temp == NULL) printf("\n");
+        else{
+            while (temp->next != NULL){
+                printf("%d->", temp->data);
+                temp = temp->next;
+            }
+            printf("%d\n", temp->data);
         }
-        printf("%d\n", temp->data);
     }
 }
-
 
 int main(){
     int vertices;
