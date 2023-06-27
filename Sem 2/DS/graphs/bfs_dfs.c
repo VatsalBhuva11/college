@@ -141,10 +141,14 @@ void bfs(int startNode){
         int deleted = dequeue(&front, &rear);
         printf("%d ", deleted);
         struct node *inAdjList = adjList[deleted];
-        while (inAdjList != NULL && visited[inAdjList->data] != 1){
+        while (inAdjList != NULL){
+            if ( visited[inAdjList->data] == 1){
+                inAdjList = inAdjList->next;
+                continue;
+            }
             enqueue(&front, &rear, inAdjList->data);
             visited[inAdjList->data] = 1;
-            parent[inAdjList->data] = deleted;
+            parent[inAdjList->data] = deleted; //to trace back shortest path.
             inAdjList = inAdjList->next;
         }
     }
@@ -160,7 +164,7 @@ void shortestDistance(int node1, int startNode){
     printf("%d , distance is: %d edges\n\n", startNode, count);
 }
 
-void rdfs(int startNode){
+void rdfs(int startNode){ //recursive dfs
     printf("%d ", startNode);
     visited[startNode] = 1;
     struct node *inAdjList = adjList[startNode];
@@ -172,20 +176,43 @@ void rdfs(int startNode){
     }
 }
 
+int flag = 0;
+int cycle = 0;
+
 void dfs(int startNode){
     push(startNode);
     while (!isStackEmpty()){
         int popped = pop();
         visited[popped] = 1;
-        printf("%d ", popped);
+        if (flag == 0){
+            printf("%d ", popped); //not print when counting connected components by setting flag as 1
+        }
         struct node * inAdjList = adjList[popped];
-        while (inAdjList != NULL && visited[inAdjList->data] != 1){
+        while (inAdjList != NULL){
+            if ( visited[inAdjList->data] == 1){
+                inAdjList = inAdjList->next;
+                continue;
+            }
             push(inAdjList->data);
             visited[inAdjList->data] = 1;
             inAdjList = inAdjList->next;
         }
     }
 }
+
+int connectedComponents(int vertices){
+    int count = 0; flag = 1;
+    for (int i = 1; i<= vertices; i++){
+        if (visited[i] == 1) continue;
+        else{
+            count++;
+            rdfs(i);
+        }
+    }
+    return count;
+}
+
+
 
 int main(){
     int vertices;
@@ -237,5 +264,11 @@ int main(){
     }
     printf("DFS traversal using stack:\n");
     dfs(startNode); printf("\n\n");
+
+    for (int i = 1; i<=vertices; i++) {
+        visited[i] = 0;
+    }
+
+    printf("Number of connected components: %d\n\n", connectedComponents(vertices));
 
 }
