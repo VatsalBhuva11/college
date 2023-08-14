@@ -1,0 +1,9 @@
+- system calls are a way to interact with the kernel. the programs request several services, and the OS invokes these services using system calls. a system call is made by a program to request a service from the kernel. the kernel system can only be accessed using system calls.
+
+- the kernel is one of the first few programs to be loaded into a separate and protected area of memory called kernel space. the user programs and applications run on the user space.
+
+- When an application creates a system call, it must first obtain permission from the kernel. It achieves this using an interrupt request, which pauses the current process and transfers control to the kernel.
+
+- If the request is permitted, the kernel performs the requested action, like creating or deleting a file. As input, the application receives the kernel's output. The application resumes the procedure after the input is received. When the operation is finished, the kernel returns the results to the application and then moves data from kernel space to user space in memory.
+
+- most of the times, a separete kernel thread is used for each system call to avoid bottlenecks, especially when intensive system calls such as connecting to a network are made.
