@@ -1,4 +1,6 @@
-we can run our custom sh files from any directory by adding the PATH to the directory of the shell file to the
+- we can run our custom sh files from any directory by adding the PATH to the directory of the shell file to the
 ~/.bashrc file. we also have to give execution access to the users by chmoding.
 eg: chmod u+x hello.sh
 	export PATH=$PATH:"/home/vbuntu/Desktop/Vatsal/college/Sem 3/OS/lab_assignments"
+	
+- set proxy for running apt commands in /etc/apt/apt.conf ("Acquire ...")
