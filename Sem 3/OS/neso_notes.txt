@@ -1,0 +1,85 @@
+- operating system is stored in the secondary memory
+
+- whenever we execute something, it gets loaded onto the main memory (RAM)
+
+- a modern general purpose computer system may consist of one or more CPUs, and a number of device
+controllers connected through a common bus that provide access to a shared memory.
+
+- each device controllers is in charge of a specific type of device. cpu and device controllers can execute at the same time, competing for memory cycles. 
+
+- but to ensure orderly access of memory by these controllers, there is a memory controller who's function is to synchronize access to memory.
+
+- when a CPU is interrupted, it stops what it is doing and immediately transfers execution to a fixed location. the fixed location usually contains the starting address of the Service Routine of the interrupt (service routine is basically what the interrupt wants to do).
+
+#STORAGE
+- registers are the smallest storage unit. followed by cache and main memory. as we go down, cost per bit reduces and size of memory increases. speed reduces as well.
+
+- eqach device controller maintains a LOCAL BUFFER STORAGE and a SET OF SPECIAL PURPOSE REGISTERS (SPRs).
+
+- each device controller also has a device driver that acts like a middleware for the communication between the OS and the device controller.
+
+---> Working of an I/O operation:
+
+1) the device driver loads the appropriate registers within the device controller.
+2) the device controller examines the loaded registers to know what action to take.
+3) the controller then starts the transfer of data to-and-from the device and its local buffer.
+4) once transfer of data is done, the device controller informs the device driver via an interrrupt that operation is over.
+5) the device driver then returns control to the OS.
+
+- this is good only for small amounts of data. can produce high overhead for larger data. prefer to use DMA (Direct Memory Access) for larger data, whereby the device controller transfers an etnire block of data directly to-or-fro its own buffer storage to memory, with no intervention by the CPU.
+
+- in DMA, 1) to 3) same. but when returning control to the OS, it uses the above approach which avoids overhead.
+
+- in non-DMA, one interrupt for each byte of data (too many interrupts as a result). in DMA, one interrupt for a block of data. as a result, the CPU can utilize the time to perform other works as well as only one interrupt is generated in DMA when the operation is completed.
+
+# COMPUTER SYSTEM ARCHITECTURE
+- two types of systems based on number of processors: single processor and multiprocessor systems (names are self explanatory).
+
+- single processor can have multiple special purpose processors for different devices, multiprocessors are more reliable, economical, and increase throughput.
+
+- multiprocessor systems can be of two types: SMP (Symmetric MultiProcessing) and AMP (Asymmetric MultiProcessing) and Clustered Systems (further into Symmetric and Asymmetric).
+
+- An operating system MUST be capable of providing these two features:
+	1) Multiprogramming: the CPU should not wait for a task to finish (let's say, I/O) before starting another task. multiprogramming increases CPU utilization by organizing jobs so that the CPU is always executing a task no matter what.
+		- all jobs exist in the job pool initially. the jobs that are brought into the main memory are a subset of the jobs in the job pool. jobs are then picked from the memory for execution by the CPU. 
+		
+	2) Time Sharing (Multitasking): 
+		- CPU executes multiple jobs by switching among them. these switches occur so frequently that the user can interact with each program while it is running. (user can interact even when it is running, unlike in multiprogramming).
+		
+		- this allows many users to feel as though only they are using the resources, as the job switching/CPU scheduling occurs very quickly using in a time shared system. 
+		
+		- a program loaded into memory and waiting execution by the CPU is called a process.
+		
+-> OPERATING SYSTEM SERVICES:
+1) User Interface
+2) Program Execution
+3) I/O Operations
+4) File Sysetm manipulation
+5) Communication
+6) Error Detection
+7) Resources Allocation
+8) Accounting
+9) Protection and Security.
+
+# SYSTEM CALLS:
+- system calls provide an itnerface to the services provided by an Operating System.
+
+- in user mode, we cannot directly access devices, memory, hardware, etc. in kernel mode, we have full access to the OS but it is dangerous if anything goes wrong. whena program crashes, the entire system does not break down in user mode, while it does in kernel mode.
+
+- hence, in user mode, we can make SYSTEM CALLS to the OS. then, the program switches to kernel mode so that the program can access/use the resources that it needs. this is known as mode switching.
+
+->Types:
+	1) Process Control
+	2) File Manipulation
+	3) Device Management
+	4) Information Maintenance
+	5) Communications
+
+- hence, a system call is a programmatic way in which a computer program requests a service from the OS.
+
+- only once the bootstrap program has fully loaded and it has located the OS kernel and loaded it into the main memory do we say that the system is running.
+
+# PROCESS MANAGEMENT
+- a process is a program in execution. each program may be composed of multiple processes
+
+- a thread is the unit of execution within a process. a process can have anywhere from one to multiple threads.

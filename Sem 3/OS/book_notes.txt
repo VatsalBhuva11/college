@@ -1,5 +1,4 @@
-#
-INTRODUCTION
+#INTRODUCTION
 
 - a computer system can be divided into 4 components: hardware, OS, apps, users. 
 
@@ -113,6 +112,14 @@ INTRODUCTION
 -----------------------------------------------------------------------------------------------------------------------
 # SYSTEM CALLS
 
+FILE RELATED: open(), read(), write(), close(), create_file(), etc.
+DEVICE RELATED: read(), write(), reposition(), ioctl(), fcntl(), etc.
+INFORMATION: get_pid(), get_process_attribute(), get_system_time_and_data(), etc.
+PROCESS CONTROL: load(), execute(), abort(), fork(), wait(), signal(), allocate(), etc.
+COMMUNICATION: pipe(), create/delete connections, shmget(), etc.
+
+- allow us to access the kernel of an operating system when using APIs. the APIs can make system calls that allow the kernel to interact with the hardware. users can only access the user mode of a processor. to interact with devices, the API makes a system call to the kernel, switching to kernel mode (to access the functionalities of the operating system)
+
 - System calls provide an interface to the services made available by an operating system. These calls are generally available as routines written in C and C++, although certain low-level tasks (for example, tasks where hardware must be accessed directly) may have to be written using assembly-language instructions.
 
 - even simple programs may make heavy use of the operating system. Frequently, systems execute thousands of system calls per second. Most programmers never see this level of detail, however.
@@ -135,9 +142,9 @@ INTRODUCTION
 	
 	- A process or job executing one program may want to load() and execute() another program.
 	
-	- If control returns to the existing program when the new program termi- nates, we must save the memory image of the existing program; thus, we have effectively created a mechanism for one program to call another program. If both programs continue concurrently, we have created a new job or process to be multiprogrammed. Often, there is a system call specifically for this purpose (create process() or submit job())
+	- If control returns to the existing program when the new program terminates, we must save the memory image of the existing program; thus, we have effectively created a mechanism for one program to call another program. If both programs continue concurrently, we have created a new job or process to be multiprogrammed. Often, there is a system call specifically for this purpose (create process() or submit job())
 	
-	- If we create a new job or process, or perhaps even a set of jobs or processes, we should be able to control its execution. This control requires the ability to determine and reset the attributes of a job or process, includ- ing the job’s priority, its maximum allowable execution time, and so on (get process attributes() and set process attributes()). We may also want to terminate a job or process that we created (terminate process()) if we find that it is incorrect or is no longer needed.
+	- If we create a new job or process, or perhaps even a set of jobs or processes, we should be able to control its execution. This control requires the ability to determine and reset the attributes of a job or process, including the job’s priority, its maximum allowable execution time, and so on (get process attributes() and set process attributes()). We may also want to terminate a job or process that we created (terminate process()) if we find that it is incorrect or is no longer needed.
 	
 	- The standard C library provides a portion of the system-call interface for many versions of UNIX and Linux. As an example, let’s assume a C program invokes the printf() statement. The C library intercepts this call and invokes the necessary system call (or calls) in the operating system — in this instance, the write() system call. The C library takes the value returned by write() and passes it back to the user program.
 	
@@ -158,3 +165,37 @@ INTRODUCTION
 	- A system with multiple users may require us to first request() a device, to ensure exclusive use of it. After we are finished with the device, we release() it. These functions are similar to the open() and close() system calls for files.
 	
 	- Once the device has been requested (and allocated to us), we can read(), write(), and (possibly) reposition() the device, just as we can with files. In fact, the similarity between I/O devices and files is so great that many operating systems, including UNIX, merge the two into a combined file –device structure. In this case, a set of system calls is used on both files and devices. Sometimes, I/O devices are identified by special file names, directory placement, or file attributes.
+	
+4) Information Maintenance:
+	- Many system calls exist simply for the purpose of transferring information between the user program and the operating system. For example, most systems have a system call to return the current time() and date(). Other system calls may return information about the system, such as the number of current users, the version number of the operating system, the amount of free memory or disk space, and so on
+	
+	- Another set of system calls is helpful in debugging a program. Many systems provide system calls to dump() memory. This provision is useful for debugging. A program trace lists each system call as it is executed. Even microprocessors provide a CPU mode known as single step, in which a trap is executed by the CPU after every instruction. The trap is usually caught by a debugger.
+	
+	- In addition, the operating system keeps information about all its processes, and system calls are used to access this information. Generally, calls are also used to reset the process information (get process attributes() and set process attributes())
+	
+5) Communication:
+	- There are two common models of interprocess communication: the message- passing model and the shared-memory model.
+	
+	--> In the message-passing model, the communicating processes exchange messages with one another to transfer information. Messages can be exchanged between the processes either directly or indirectly through a common mailbox. Before communication can takeplace, a connection must be opened. The name of the other communicator must be known, be it another process on the same system or a process on another computer connected by a communications network.
+	
+	- Each computer in a network has a host name by which it is commonly known. A host also has a network identifier, such as an IP address.
+	
+	- Similarly, each process has a process name, and this name is translated into an identifier by which the operating system can refer to the process. The get hostid() and get processid() system calls do this translation. The identifiers are then passed to the general- purpose open() and close() calls provided by the file system or to specific open connection() and close connection() system calls, depending on the system’s model of communication.
+	
+	- Most processes that will be receiving connections are special-purpose daemons, which are system programs provided for that purpose. They execute a wait for connection() call and are awakened when a connection is made.The source of the communication, known as the client, and the receiving daemon, known as a server, then exchange messages by using read message() and write message() system calls. The close connection() call terminates the communication.
+	
+	--> In the shared-memory model, processes use shared memory create() and shared memory attach() system calls to create and gain access to regions of memory owned by other processes. 
+	
+	- normally, the operating system tries to prevent one process from accessing another process’s memory. Shared memory requires that two or more processes agree to remove this restriction. They can then exchange information by reading and writing data in the shared areas. The form of the data is determined by the processes and is not under the operating system’s control. The processes are also responsible for ensuring that they are not writing to the same location simultaneously.
+	
+6) Protection:
+	- Protection provides a mechanism for controlling access to the resources provided by a computer system. Historically, protection was a concern only on multiprogrammed computer systems with several users. However, with the advent of networking and the Internet, all computer systems, from servers to mobile handheld devices, must be concerned with protection.
+	
+	- Typically, system calls providing protection include set permission() and get permission(), which manipulate the permission settings of resources such as files and disks. The allow user() and deny user() system calls specify whether particular users can—or cannot—be allowed access to certain resources
+-----------------------------------------------------------------------------------------------------------------------
+#PROCESS MANAGEMENT:
+
+- a process is a program in execution.
+
+- A system therefore consists of a collection of processes: operating- system processes executing system code and user processes executing user code. Potentially, all these processes can execute concurrently, with the CPU (or CPUs) multiplexed among them. By switching the CPU between processes, the operating system can make the computer more productive
+

@@ -132,6 +132,7 @@ void insertion_sort(struct node **head){
 }
 
 void reverse(struct node **head, struct node *curr, struct node *prev){
+    if (prev->next = NULL) return;
     if (curr->next == NULL){
         curr->next = prev;
         *head = curr;
