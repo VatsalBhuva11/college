@@ -1,4 +1,5 @@
-#INTRODUCTION
+#
+INTRODUCTION
 
 - a computer system can be divided into 4 components: hardware, OS, apps, users. 
 
@@ -21,6 +22,8 @@
 - Interaction is achieved through a sequence of load or store instructions to specific memory addresses. The load instruction moves a byte or word from main memory to an internal register within the CPU, whereas the store instruction moves the content of a register to main memory. Aside from explicit loads and stores, the CPU automatically loads instructions from main memory for execution.
 
 - A general-purpose computer system consists of CPUs and multiple device controllers that are connected through a common bus. Each device controlleris in charge of a specific type of device. A device controller maintains some local buffer storage and a set of special-purpose registers. The device controller is responsible for moving the data between the peripheral devices that it controls and its local buffer storage. operating systems have a device driver for each device controller. This device driver understands the device controller and provides the rest of the operating system with a uniform interface to the device.
+
+									OS <--- Device Driver <--- Device Controller <--- Device
 
 - device driver is sort of a middleware that helps in managing read/write operations between devices, and control flow of information between the devices and the respective device controller.
 
@@ -45,7 +48,7 @@
 	2) cheaper: it is cheaper to have a single system with multiple processors to manage and share I/O operations, disk operations, memory, etc. than to have multiple single processor systems with local disks and memory and local copies of data.
 	3) reliable: If functions can be distributed properly among several processors, then the failure of one processor will not halt the system, only slow it down. If we have ten processors and one fails, then each of the remaining nine processors can pick up a share of the work of the failed processor. Thus, the entire system runs only 10 percent slower, rather than failing altogether.
 	
-- The ability to continue providing service proportional to the level of surviving hardware is called graceful degradation. Some systems go beyond graceful degradation and are called fault tolerant, because they can suffer a failure of any single component and still continue operation.
+- The ability to continue providing service proportional to the level of surviving hardware is called GRACEFUL DEGRADATION. Some systems go beyond graceful degradation and are called FAULT TOLERANT, because they can suffer a failure of any single component and still continue operation.
 
 - Some systems use asymmetric multiprocessing, in which each processor is assigned a specific task. A boss processor controls the system; the other processors either look to the boss for instruction or have predefined tasks. This scheme defines a boss–worker relationship. The boss processor schedules and allocates work to the worker processors.
 
@@ -93,7 +96,7 @@
 
 - When a process executes, it typically executes for only a short time before it either finishes or needs to perform I/O. I/O may be interactive; that is, output goes to a display for the user, and input comes from a user keyboard, mouse, or other device. Since interactive I/O typically runs at “people speeds,” it may take a long time to complete. Rather than let the CPU sit idle as this interactive input takes place, the operating system will rapidly switch the CPU to the program of some other user.
 
-- Time sharing and multiprogramming require that several jobs be kept simultaneously in memory. If several jobs are ready to be brought into memory, and if there is not enough room for all of them, then the system must choose among them. Making this decision involves job scheduling
+- Time sharing and multiprogramming require that several jobs be kept simultaneously in memory. If several jobs are ready to be brought into memory, and if there is not enough room for all of them, then the system must choose among them. Making this decision involves job scheduling/process scheduling.
 
 - In addition, if several jobs are ready to run at the same time, the system must choose which job will run first. Making this decision is CPU scheduling.
 
@@ -118,7 +121,7 @@ INFORMATION: get_pid(), get_process_attribute(), get_system_time_and_data(), etc
 PROCESS CONTROL: load(), execute(), abort(), fork(), wait(), signal(), allocate(), etc.
 COMMUNICATION: pipe(), create/delete connections, shmget(), etc.
 
-- allow us to access the kernel of an operating system when using APIs. the APIs can make system calls that allow the kernel to interact with the hardware. users can only access the user mode of a processor. to interact with devices, the API makes a system call to the kernel, switching to kernel mode (to access the functionalities of the operating system)
+- allow us to access the kernel of an operating system when using APIs. the APIs can make system calls that allow the our program to interact with the hardware/OS services (through the kernel). users can only access the user mode of a processor. to interact with devices, the API makes a system call to the kernel, switching to kernel mode (to access the functionalities of the operating system)
 
 - System calls provide an interface to the services made available by an operating system. These calls are generally available as routines written in C and C++, although certain low-level tasks (for example, tasks where hardware must be accessed directly) may have to be written using assembly-language instructions.
 
@@ -199,3 +202,264 @@ COMMUNICATION: pipe(), create/delete connections, shmget(), etc.
 
 - A system therefore consists of a collection of processes: operating- system processes executing system code and user processes executing user code. Potentially, all these processes can execute concurrently, with the CPU (or CPUs) multiplexed among them. By switching the CPU between processes, the operating system can make the computer more productive
 
+- contents of a process: A process is more than the program code, which is sometimes known as the text section. It also includes the current activity, as represented by the value of the program counter and the contents of the processor’s registers. A process generally also includes the process stack, which contains temporary data (such as function parameters, return addresses, and local variables), and a data section, which contains global variables. A process may also include a heap, which is memory that is dynamically allocated during process run time.
+
+- Although two processes may be associated with the same program, they are nevertheless considered two separate execution sequences. For instance, several users may be running different copies of the mail program, or the same user may invoke many copies of the web browser program. Each of these is a separate process; and although the text sections are equivalent, the data, heap, and stack sections vary.
+
+	-> Process state:
+		- As a process executes, it changes state. The state of a process is defined in part by the current activity of that process.
+		- It is important to realize that only one process can be running on any processor at any instant. Many processes may be ready and waiting, however.
+	
+	-> PCB (Process Control Block):
+		- Each process is represented in the operating system by a process control block (PCB)—also called a task control block.
+		- the PCB of a process contains info about the process such as : the processID, process state, program counter, CPU registers for that process, Scheduling information,, memory management info, open files, accounting info, I/O status info, etc.
+		- The process control block in the Linux operating system is represented by the C structure task struct, which is found in the <linux/sched.h>. each task struct would have this information (atleast):
+		
+			long state; /* state of the process */
+			struct sched entity se; /* scheduling information */
+			struct task struct *parent; /* this process’s parent */
+			struct list head children; /* this process’s children */
+			struct files struct *files; /* list of open files */
+			struct mm struct *mm; /* address space of this process */
+			
+		- the state of a process is represented by the field long state in this structure. Within the Linux kernel, all active processes are represented using a doubly linked list of task struct. The kernel maintains a pointer — current — to the process currently executing on the system
+		- 
+		
+	-> Threads:
+		- Most modern operating systems have extended the process concept to allow a process to have multiple threads of execution and thus to perform more than one task at a time. This feature is especially beneficial on multicore systems, where multiple threads can run in parallel. On a system that supports threads, the PCB is expanded to include information for each thread.
+		- a single core of a processor can handle only one thread at a time. multicore system means multithreading can be done (each core can run a single thread, so we can run multiple threads of a process at the same time to get the process done faster). hyperthreading when each single core can be split into a couple of logical cores, allowing more than one thread to run on each physical core.
+
+		
+# CPU SCHEDULING:
+- the process scheduler selects an available process (possibly from a set of several available processes) for program execution on the CPU. For a single-processor system, there will never be more than one running process. If there are more processes, the rest will have to wait until the CPU is free and can be rescheduled.
+
+	-> Scheduling Queues:
+		- As processes enter the system, they are put into a JOB QUEUE, which consists of all processes in the system.
+		- The processes that are residing in main memory and are ready and waiting to execute are kept on a list called the READY QUEUE. This queue is generally stored as a linked list. A ready-queue header contains pointers to the first and final PCBs in the list. Each PCB includes a pointer field that points to the next PCB in the ready queue.
+		- Suppose the process makes an I/O request to a shared device, such as a disk. Since there are many processes in the system, the disk may be busy with the I/O request of some other process. The process therefore may have to wait for the disk. The list of processes waiting for a particular I/O device is called a DEVICE QUEUE. Each device has its own device queue
+		- A new process is initially put in the ready queue. It waits there until it is selected for execution, or dispatched.
+		- Once the process is allocated the CPU and is executing, one of several events could occur:
+			• The process could issue an I/O request and then be placed in an I/O queue.
+			• The process could create a new child process and wait for the child’s termination.
+			• The process could be removed forcibly from the CPU, as a result of an interrupt, and be put back in the ready queue.
+		  In the first two cases, the process eventually (after wait operation is completed) switches from the waiting state to the ready state and is then put back in the ready queue. A process continues this cycle until it terminates, at which time it is removed from all queues and has its PCB and resources deallocated.
+		  
+	-> Schedulers:
+		- The operating system must select, for scheduling purposes, processes from these queues in some fashion. The selection process is carried out by the appropriate scheduler.
+		- Often, in a batch system, more processes are submitted than can be executed immediately. These processes are spooled to a mass-storage device (typically a disk), where they are kept for later execution. The LONG-TERM SCHEDULER, or JOB SCHEDULER, selects processes from this pool and loads them into memory for execution.
+		- Thus it plans the CPU scheduling for batch jobs. Processes, which are resource intensive and have a low priority are called batch jobs. These jobs are executed in a group or bunch.
+		- The SHORT-TERM SCHEDULER, or CPU SCHEDULER, selects from among the processes that are ready to execute and allocates the CPU to one of them.
+		- The primary distinction between these two schedulers lies in frequency of execution. 
+		- The short-term scheduler must select a new process for the CPU frequently. A process may execute for only a few milliseconds before waiting for an I/O request. Often, the short-term scheduler executes at least once every 100 milliseconds. Because of the short time between executions, the short-term scheduler must be fast.
+		- The long-term scheduler executes much less frequently; minutes may separate the creation of one new process and the next. The long-term scheduler controls the degree of multiprogramming (the number of processes in mem- ory). If the degree of multiprogramming is stable, then the average rate of process creation must be equal to the average departure rate of processes leaving the system. Thus, the long-term scheduler may need to be invoked only when a process leaves the system. Because of the longer interval between executions, the long-term scheduler can afford to take more time to decide which process should be selected for execution.
+		- An I/O-bound process is one that spends more of its time doing I/O than it spends doing computations. A CPU-bound process, in contrast, generates I/O requests infrequently, using more of its time doing computations.
+		- if all processes are I/O bound, the ready queue will almost always be empty, and the short-term scheduler will have little to do. If all processes are CPU bound, the I/O waiting queue will almost always be empty, devices will go unused, and again the system will be unbalanced. hence, the long-term scheduler needs to select a good process mix of I/O bound and CPU bound processes.
+		- Some operating systems, such as time-sharing systems, may introduce an additional, intermediate level of scheduling, called the MEDIUM-TERM SCHEDULER
+		- The key idea behind a medium-term scheduler is that sometimes it can be advantageous to remove a process from memory (and from active contention for the CPU) and thus reduce the degree of multiprogramming. Later, the process can be reintroduced into memory, and its execution can be continued where it left off. This scheme is called swapping. The process is swapped out, and is later swapped in, by the medium-term scheduler.
+		-  A running process may be suspended because of an I/O request or by a system call. Such a suspended process is then removed from the main memory and is stored in a swapped queue in the secondary memory in order to create a space for some other process in the main memory. This is done because there is a limit on the number of active processes that can reside in the main memory.The medium-term scheduler is in charge of handling the swapped-out process. 
+		- once the suspending condition is removed, the medium terms scheduler attempts to allocate the required amount of main memory and swap the process in & make it ready. Thus, the medium-term scheduler plans the CPU scheduling for processes that have been waiting for the completion of another process or an I/O task.
+		
+		- all of these schedulers work to put a process into execution by the CPU. they just serve different kinds of processes.
+	
+	-> Context Switching:
+		- When an interrupt occurs, the system needs to save the current context of the process running on the CPU so that it can restore that context when its processing is put on hold, essentially suspending the process and then resuming it. The context is represented in the PCB of the process. It includes the value of the CPU registers, the process state (see Figure 3.2), and memory-management information. Generically, we perform a state save of the current state of the CPU, be it in kernel or user mode, and then a state restore to resume operations.
+		- Switching the CPU to another process requires performing a state save of the current process and a state restore of a different process. This task is known as a context switch.
+		- When a context switch occurs, the kernel saves the context of the old process in its PCB and loads the saved context of the new process scheduled to run. Context-switch time is pure overhead, because the system does no useful work while switching.
+	
+		
+# Operations on Processes
+	1) Process Creation:
+		- During the course of execution, a process may create several new processes. As mentioned earlier, the creating process is called a parent process, and the new processes are called the children of that process. Each of these new processes may in turn create other processes, forming a tree of processes.
+		- identify processes according to a unique process identifier (or pid), which is typically an integer number. The pid provides a unique value for each process in the system, and it can be used as an index to access various attributes of a process within the kernel.
+		- The init process (which always has a pid of 1) serves as the root parent process for all user processes. Once the system has booted, the init process can also create various user processes
+		- In general, when a process creates a child process, that child process will need certain resources (CPU time, memory, files, I/O devices) to accomplish its task.
+		- The parent may have to partition its resources among its children, or it may be able to share some resources (such as memory or files) among several of its children. Restricting a child process to a subset of the parent’s resources prevents any process from overloading the system by creating too many child processes.
+		- A new process is created by the fork() system call. The new process consists of a copy of the address space of the original process.
+		- Both processes (the parent and the child) continue execution at the instruction after the fork(), with one difference: the return code for the fork() is zero for the new (child) process, whereas the (nonzero) process identifier of the child is returned to the parent.
+		- After a fork() system call, one of the two processes typically uses the exec() system call to replace the process’s memory space with a new program. so if the exec call is made under the child process, the child process is entirely replaced by the process of the new program, but the original parent process of the child remains the same and keeps executing. exec() overlays the process’s address space with a new program
+		- An address space is a range of valid addresses in memory that are available for a program or process. That is, it is the memory that a program or process can access.
+		- The size of an address space can be made larger than that of physical memory by using a memory management technique called virtual memory. A virtual memory, also known as a page file, is actually a physical file on disk that acts like an additional RAM or RAM module. Thus, an address space consists of both physical memory and virtual memory.
+		- the wait(NULL) system call is used when we want a parent process to wait for the termination of its child processes before it can execute.
+		- Because the child is a copy of the parent, each process has its own copy of any data.
+		
+	2) Process Termination:
+		- A process terminates when it finishes executing its final statement and asks the operating system to delete it by using the exit() system call.
+		- All the resources of the process—including physical and virtual memory, open files, and I/O buffers—are deallocated by the operating system.
+		- Usually, such a system call can be invoked on only by the parent of the process that is to be terminated. Otherwise, users could arbitrarily kill each other’s jobs. Note that a parent needs to know the identities of its children if it is to terminate them.
+		- Some systems do not allow a child to exist if its parent has terminated. In such systems, if a process terminates (either normally or abnormally), then all its children must also be terminated. This phenomenon, referred to as CASCADING TERMINATION, is normally initiated by the operating system.
+		- The wait() system call is passed a parameter that allows the parent to obtain the exit status of the child. This system call also returns the process identifier of the terminated child so that the parent can tell which of its children has terminated.
+												pid_t pid;
+												int status;
+												pid = wait(&status); //exit status of child now stored in int status.
+		- if a parent did not invoke wait() and instead terminated, thereby leaving its child processes as orphans. Linux and UNIX address this scenario by assigning the init process as the new parent to orphan processes. The init process periodically invokes wait(), thereby allowing the exit status of any orphaned process to be collected and releasing the orphan’s process identifier and process-table entry.
+		
+# InterProcess Communication:
+	- A process is independent if it cannot affect or be affected by the other processes executing in the system. Any process that does not share data with any other process is independent. A process is cooperating if it can affect or be affected by the other processes executing in the system. Clearly, any process that shares data with other processes is a cooperating process.
+	
+	- Cooperating processes require an interprocess communication (IPC) mech- anism that will allow them to exchange data and information. two models: shared-memory model, message-passing model.
+	
+	- In the shared-memory model, a region of memory that is shared by cooperating processes is established. Processes can then exchange informa- tion by reading and writing data to the shared region. In the message-passing model, communication takes place by means of messages exchanged between the cooperating processes.
+	
+	- Message passing is useful for exchanging smaller amounts of data, because no conflicts need be avoided. Message passing is also easier to implement in a distributed system than shared memory. 
+	
+	- Shared memory can be faster than message passing, since message-passing systems are typically implemented using system calls and thus require the more time-consuming task of kernel intervention. In shared-memory systems, system calls are required only to establish shared-memory regions. Once shared memory is established, all accesses are treated as routine memory accesses, and no assistance from the kernel is required.
+	
+	- systems with several processing cores indicates that message passing provides better performance than shared memory on such systems. Shared memory suffers from cache coherency issues, which arise because shared data migrate among the several caches.
+	
+	-> Shared Memory Systems:
+		- Interprocess communication using shared memory requires communicating processes to establish a region of shared memory. Typically, a shared-memory region resides in the address space of the process creating the shared-memory segment.
+		- Other processes that wish to communicate using this shared-memory segment must attach it to their address space.
+		- normally, the operating system tries to prevent one process from accessing another process’s memory. Shared memory requires that two or more processes agree to remove this restriction.
+		
+		- They can then exchange information by reading and writing data in the shared areas. The form of the data and the location are determined by these processes and are not under the operating system’s control. The processes are also responsible for ensuring that they are not writing to the same location simultaneously.
+		
+		-> PRODUCER-CONSUMER PROBLEM:
+			- A producer process produces information that is consumed by a consumer process. For example, a compiler may produce assembly code that is consumed by an assembler.
+			
+			- server as a producer and a client as a consumer. For example, a web server produces (that is, provides) HTML files and images, which are consumed (that is, read) by the client web browser requesting the resource.
+			
+			- One solution to the producer–consumer problem uses shared memory. To allow producer and consumer processes to run concurrently, we must have available a BUFFER OF ITEMS that can be filled by the producer and emptied by the consumer.
+			
+			- This buffer will reside in a region of memory that is shared by the producer and consumer processes. A producer can produce one item while the consumer is consuming another item. The producer and consumer must be synchronized, so that the consumer does not try to consume an item that has not yet been produced.
+			
+			- Two types of buffers can be used. The unbounded buffer places no practical limit on the size of the buffer. The consumer may have to wait for new items, but the producer can always produce new items. The bounded buffer assumes a fixed buffer size. In this case, the consumer must wait if the buffer is empty, and the producer must wait if the buffer is full.
+			
+			for a producer process:
+			- The shared buffer is implemented as a circular array with two logical pointers: in and out. The variable in points to the next free position in the buffer; out points to the first full position in the buffer. The buffer is empty when in == out; the buffer is full when ((in + 1) % BUFFER SIZE) == out.
+			
+			int count = 0;
+			void producer(void){
+				int itemP;
+				while (1){
+					Produce_item(itemP);
+					while (count == n); //if buffer is empty, cannot produce more items. have to wait till count decremented (that is, when the consumer consumes something)
+					buffer[in] = itemP;
+					in = (in+1) % BUFFER_SIZE;
+					count = count+1;
+				}
+			}
+			
+			for a consumer process:
+			- The consumer process has a local variable next consumed in which the item to be consumed is stored.
+as long as the queue is empty (in == out), nothing should be consumed. when the producer produces something and in is not = out, next_consumed item = buffer[out]. then, the item is consumed, and out is incremented to update the position of the first filled item post-consumption.	
+
+			void producer(void){
+				int itemC;
+				while (1){
+					while (count == 0); //if buffer is full, cannot consume more items. have to wait till count incremented (that is, when the producer produces something)
+					itemC = buffer[out];
+					out = (out+1) % BUFFER_SIZE;
+					count = count-1;
+				}
+			}
+
+# Communication in Client-Server Systems:
+	-> Pipes:
+	 	- A pipe acts as a conduit allowing two processes to communicate.
+	 	- two types of pipes: ordinary pipes, named pipes.
+	 	
+	 	1) Ordinary Pipes:
+	 		- Ordinary pipes allow two processes to communicate in standard producer–consumer fashion: the producer writes to one end of the pipe (the write-end)and the consumer reads from the other end (the read-end). As a result, ordinary pipes are unidirectional, allowing only one-way communication. If two-way communication is required, two pipes must be used, with each pipe sending data in a different direction.
+	 		- On UNIX systems, ordinary pipes are constructed using the function pipe(int fd[]). This function creates a pipe that is accessed through the int fd[] file descriptors: fd[0] is the read-end of the pipe, and fd[1] is the write-end.
+	 		- UNIX treats a pipe as a special type of file. Thus, pipes can be accessed using ordinary read() and write() system calls.
+	 		- An ordinary pipe cannot be accessed from outside the process that created it. Typically, a parent process creates a pipe and uses it to communicate with a child process that it creates via fork() (a child process inherits open files from its parent, property of forking). the child inherits the pipe from its parent process.
+	 		- Note that ordinary pipes require a parent–child relationship between the communicating processes on both UNIX and Windows systems. This means that these pipes can be used only for communication between processes on the same machine.
+	 		
+	 	2) Named Pipes:
+	 		- Ordinary pipes provide a simple mechanism for allowing a pair of processes to communicate. However, ordinary pipes exist only while the processes are communicating with one another. On both UNIX and Windows systems, once the processes have finished communicating and have terminated, the ordinary pipe ceases to exist.
+	 		- Named pipes provide a much more powerful communication tool. Communication can be bidirectional, and no parent–child relationship is required. Once a named pipe is established, several processes can use it for communi- cation.
+	 		- Named pipes are referred to as FIFOs in UNIX systems. Once created, they appear as typical files in the file system. A FIFO is created with the mkfifo() system call and manipulated with the ordinary open(), read(), write(), and close() system calls. It will continue to exist until it is explicitly deleted from the file system.
+	 		- Although FIFOs allow bidirectional communication, only half-duplex transmission (only one at a time) is permitted. If data must travel in both directions, two FIFOs are typically used. Additionally, the communicating processes must reside on the same machine. If intermachine communication is required, sockets (Section 3.6.1) must be used.
+	 		
+	 		
+# THREADS
+- A thread is a basic unit of CPU utilization; it comprises a thread ID, a program counter, a register set, and a stack. It shares with other threads belonging to the same process its code section, data section, and other operating-system resources, such as open files and signals
+			
+- An application typically is implemented as a separate process with several threads of control. A web browser might have one thread display images or text while another thread retrieves data from the network, for example.
+
+- alternative solution is to create a new process to service each task. but process creation is time consuming and resource intensive, however. If the new process will perform the same tasks as the existing process, why incur all that overhead? It is generally more efficient to use one process that contains multiple threads.
+
+- Multithreading an interactive application may allow a program to continue running even if part of it is blocked or is performing a lengthy operation, thereby increasing responsiveness to the user. This quality is especially useful in designing user interfaces.
+
+- Processes can only share resources through techniques such as shared memory and message passing. Such techniques must be explicitly arranged by the programmer. However, threads share the memory and the resources of the process to which they belong by default. The benefit of sharing code and data is that it allows an application to have several different threads of activity within the same address space.
+
+- Because threads share the resources of the process to which they belong, it is more economical to create and context-switch threads. 
+
+- A single-threaded process can run on only one processor, regardless how many are available.
+
+	-> Multicore Programming:
+		- place multiple computing cores on a single chip. Each core appears as a separate processor to the operating system
+		- Whether the cores appear across CPU chips or within CPU chips, we call these systems multicore or multiprocessor systems. Multithreaded programming provides a mechanism for more efficient use of these multiple computing cores and improved concurrency.
+		- example: Consider an application with four threads. On a system with a single computing core, concurrency merely means that the execution of the threads will be interleaved over time (one thread after the other on a single core), because the processing core is capable of executing only one thread at a time. On a system with multiple cores, however, concurrency means that the threads can run in parallel, because the system can assign a separate thread to each core
+		NOTE: although only n number of threads can run parallely on an n-core system (without hyperthreading), there can still exist more than n threads at any given moment on the system, but only n of these will be "active" concurrently.
+		- there are two types of parallelism: data parallelism and task parallelism.
+		1) Data Parallelism:
+			- Data parallelism focuses on distributing subsets of the same data across multiple computing cores and performing the same operation on each core.
+			- Consider, for example, summing the contents of an array of size N. On a single-core system, one thread would simply sum the elements [0] . . . [N − 1]. On a dual-core system, however, thread A, running on core 0, could sum the elements [0] . . . [N/2 − 1] while thread B, running on core 1, could sum the elements [N/2] . . . [N − 1].
+		2) Task Parallelism:
+			- Task parallelism involves distributing not data but tasks (threads) across multiple computing cores. Each thread is performing a unique operation.
+			- Different threads may be operating on the same data, or they may be operating on different data
+			- example: performing a different mathematical operation on the same array in two separate threads.
+			
+	-> Multithreading Models:
+		- support for threads may be provided either at the user level, for user threads, or by the kernel, for kernel threads. User threads are supported above the kernel and are managed without kernel support, whereas kernel threads are supported and managed directly by the operating system.
+		1) Many-to-one model:
+			- maps many user-level threads to one kernel thread. Thread management is done by the thread library in user space, so it is efficient.
+			- the entire process will block if a thread makes a blocking system call. Also, because only one thread can access the kernel at a time, multiple threads are unable to run in parallel on multicore systems
+			- very few systems continue to use the model because of its inability to take advantage of multiple processing cores.
+		
+		2) One-to-one model:
+			- The one-to-one model (Figure 4.6) maps each user thread to a kernel thread. It provides more concurrency than the many-to-one model by allowing another thread to run when a thread makes a blocking system call.
+			- allows multiple threads to run in parallel on multiprocessors. The only drawback to this model is that creating a user thread requires creating the corresponding kernel thread. Because the overhead of creating kernel threads can burden the performance of an application, most implementations of this model restrict the number of threads supported by the system.
+			- Linux, along with the family of Windows operating systems, implement the one-to-one model.
+		
+		3) Many-to-many model:
+			- multiplexes many user-level threads to a smaller or equal number of kernel threads.
+			- The many-to-many model suffers from neither of these shortcomings of one-to-one or many-to-one: developers can create as many user threads as necessary, and the corresponding kernel threads can run in parallel on a multiprocessor. Also, when a thread performs a blocking system call, the kernel can schedule another thread for execution
+			- One variation on the many-to-many model still multiplexes many user- level threads to a smaller or equal number of kernel threads but also allows a user-level thread to be bound to a kernel thread. This variation is sometimes referred to as the two-level model
+			
+	-> Thread Libraries:
+		- A thread library provides the programmer with an API for creating and managing threads.
+		- There are two primary ways of implementing a thread library. 
+		
+		- The first approach is to provide a library entirely in user space with no kernel support. All code and data structures for the library exist in user space. This means that invoking a function in the library results in a local function call in user space and not a system call.
+		- The second approach is to implement a kernel-level library supported directly by the operating system. In this case, code and data structures for the library exist in kernel space. Invoking a function in the API for the library typically results in a system call to the kernel.
+		
+		- Three main thread libraries are in use today: POSIX Pthreads, Windows, and Java. Pthreads, the threads extension of the POSIX standard, may be provided as either a user-level or a kernel-level library.
+		- For POSIX and Windows threading, any data declared globally—that is, declared outside of any function—are shared among all threads belonging to the same process. Because Java has no notion of global data, access to shared data must be explicitly arranged between threads. Data declared local to a function are typically stored on the stack. Since each thread has its own stack, each thread has its own copy of local data.
+		- two general strategies for creating multiple threads: asynchronous threading and synchronous threading.
+		
+		1) Asynchronous threading:
+			- With asynchronous threading, once the parent creates a child thread, the parent resumes its execution, so that the parent and child execute concurrently.
+			- Each thread runs independently of every other thread, and the parent thread need not know when its child terminates. Because the threads are independent, there is typically little data sharing between threads.
+			
+		2) Synchronous threading:
+			- the parent thread creates one or more children and then must wait for all of its children to terminate before it resumes —the so-called fork-join strategy
+			- the threads created by the parent perform work concurrently, but the parent cannot continue until this work has been completed. Once each thread has finished its work, it terminates and joins with its parent. 
+			- Typically, synchronous threading involves significant data sharing among threads. For example, the parent thread may combine the results calculated by its various children.
+			
+	-> Implicit Threading:
+		- One way to address difficulties related to threading and better support the design of multithreaded applications is to transfer the creation and management of threading from application developers to compilers and run-time libraries.
+		
+		-> Thread pools:
+			- The first issue concerns the amount of time required to create the thread, together with the fact that the thread will be discarded once it has completed its work
+			- Another issue is that If we allow all concurrent requests to be serviced in a new thread, we have not placed a bound on the number of threads concurrently active in the system. Unlimited threads could exhaust system resources, such as CPU time or memory.
+			- The general idea behind a thread pool is to create a number of threads at process startup and place them into a pool, where they sit and wait for work. When a server receives a request, it awakens a thread from this pool—if one is available —and passes it the request for service. Once the thread completes its service, it returns to the pool and awaits more work. If the pool contains no available thread, the server waits until one becomes free.
+			- Thread pools offer these benefits:
+				- 1. Servicing a request with an existing thread is faster than waiting to create
+				a thread.
+				- 2. A thread pool limits the number of threads that exist at any one point.
+				This is particularly important on systems that cannot support a large
+				number of concurrent threads.
+				- 3. Separating the task to be performed from the mechanics of creating the
+				task allows us to use different strategies for running the task. For example,
+				the task could be scheduled to execute after a time delay or to execute
+				periodically.
+				
+	-> Threading Issues:
+		1) The fork() and exec() System Calls:
+			- If one thread in a program calls fork(), does the new process duplicate all threads, or is the new process single-threaded? Some UNIX systems have chosen to have two versions of fork(), one that duplicates all threads and another that duplicates only the thread that invoked the fork() system call.
+			- The exec() system call typically works in the same way as described in Chapter 3. That is, if a thread invokes the exec() system call, the program specified in the parameter to exec() will replace the entire process—including all threads.
+			- If exec() is called immediately after forking, then duplicating all threads is unnecessary, as the program specified in the parameters to exec() will replace the process. In this instance, duplicating only the calling thread is appropriate. If, however, the separate process does not call exec() after forking, the separate process should duplicate all threads.
+			
+		2) 

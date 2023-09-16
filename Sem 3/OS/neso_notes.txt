@@ -83,3 +83,330 @@ controllers connected through a common bus that provide access to a shared memor
 - a process is a program in execution. each program may be composed of multiple processes
 
 - a thread is the unit of execution within a process. a process can have anywhere from one to multiple threads.
+
+- state of a process is defined in part by the current activity of the process (what is the process currently doing?) the different states that a process can be in are:
+	1) New: the process is newly being created.
+	2) Ready: once the process has been created, it has to be assigned to a processor to be executed. this can only be done once the process is in the "ready" state.
+	3) Running: once the process is in the ready state, the Scheduler dispatches the process to the processor so that it can begin execution. Instructions of the process are being executed.
+	4) Waiting/Blocked: Process is waiting for some event to occur (like the completion of an I/O operation or reception of a signal). After the event, the process goes back to the ready state, not directly the running state.
+	5) Terminated: The process has completed its execution.
+	
+- PCB (Process Control Block) - used to represent each process in the OS. contains information about the process.
+contains info such as: 
+	1) process ID - unique for every process
+	2) process state
+	3) program counter - contains address of the next instruction to be exectued. 
+	4) CPU registers - tells the registers used by a particular process.
+	5) CPU Scheduling information - priority of the processes, pointer to the scheduling queue. used to determine which process to execute next.
+	6) Memory management - memory being used by a process.
+	7) Accounting - keeps account of resources used by a process (CPU/time/etc).
+	8) I/O Status - I/O devices being used by a process stored in this.
+	
+-> Process Scheduling:
+- maximize CPU utilization by having some process running at all times.
+
+- time sharing so that users can interact with process while they're running (switch processes rapidly).
+
+- these can be achieved by the process scheduler that selects an available process (from a set of available processes) for program execution on the CPU.
+
+- for a single processor system, there will never be more than one running process. the remaining processes have to wait till the CPU is free (or the running process has to be rescheduled and run again later).
+
+-> Scheduling Queues.
+	1) Job queue:
+		- as processes enter the system, they are put into a job queue.
+		- consists of all the processes of the system (that are waiting to go into the ready state)
+	
+	2) Ready queue:
+		- the processes that are residing in the main memory and are ready and waiting to execute are put on the ready queue.
+		
+- when a process is being executed by the CPU, three things can happen: either the process is fully executed, a higher priority process swaps in for the process and the process is put back in the ready queue, or the process has to do some wait operation (like I/O), after which it is put back in the ready queue.
+
+-> Context Switching:
+- interrupts cause the OS to change a CPU from its current task to run a kernel routine.
+
+- when an interrupt occurs, the system needs to save the current context (current state, including registers, memory, etc.) of the process currently running on the CPU so that it can restore that context when its processing is done, essentially suspending the process and resuming it later. this context is represented in the PCB of that process.
+
+- switching the CPU to another process requires performing a state save of the current process and a state restore of a different process. this task is known as CONTEXT SWITCHING.
+
+- context switching results in wastage of CPU time, as the CPU can't do anything when context switch occurs. speed of context switching varies from machine to machine, depending on the state to be saved and the state to be restored.
+
+-> OPERATIONS ON PROCESSES:
+1) Process Creation:
+	- a process can create several other processes. parent-child relationship.
+	
+2) Process Termination: 
+	- process terminates when it finishes executing its final statement and asks the OS to delete it by using the exit() system call.
+	
+	- at that point, the process may return a status value to its parent process (via the wait(&status) system call). this is so that the parent knows that the child process has completed its execution and it is terminating.
+	
+	- all resources of the process are deallocated
+	
+	- the parent of a process can also terminate its child processes. a parent may do so cuz of:
+		i) the child has exceeded its usage of the allocated resources.
+		ii) the task assigned to the child is not required by the parent or the process tree.
+		iii) the parent is exiting (terminating), and some OS's do not allow the children to execute if the parent is terminated. (aka CASCADING TERMINATION)
+
+3) Interprocess Communication: (IPC)
+	- involves communication of one process with another.
+	
+	- process executing concurrently may either be independent or cooperating processes.
+	
+	- independent: cannot affect/be affected by other processes in the system.
+	  cooperating: can affect/be affected by other processes in the system. eg: any process that shares data with other process . so, interprocess communication will be required in cooperating processes
+	  
+	- reasons for process cooperation:
+		i) information sharing (like shared files/memory)
+		ii) computational speedup (by breaking up a process into several subprocesses that need to communicate with each other)
+		iii) modularity (dividing the system into multiple modules that need to communicate with each other)
+		iv) convenience (multiple processes running at the same time need to cooperate with each other without clashing)
+	
+	- two fundamental models of IPC:
+		a) Shared memory:
+			- a region of memory that is shared by cooperating processes is established.
+			- processes can then exchange information by reading/writing data to this shared region.
+			- Address space is set of logical addresses that a process references in its code. 
+			- the shared memory region resides in the address space of the process that initiates the communication.
+			- other processes that wish to communicate using this shared memory segment must attach it to their address space.
+			- normally, one process cannot access another process' memory. shared memory requires that two or more processes remove this restriction.
+		--> PRODUCER CONSUMER PROBLEM:
+			- a producer process produces info. that is consumed by a consumer process. (eg: a compiler may produce assembly code, which is consumed by an assembler. or, client-server model where the server produces web pages and the client consumes them.)
+			- the problem is that the consumer should consume only what the producer has produced, and not anything that the producer has not produced.
+			- this can be solved using shared memory. the producer and consumer can run concurrently by making available a buffer of items that can be filled by the producer and emptied by the consumer. so, the producer can produce one item while the consumer is consuming another item. this process must be synchronized so that the consumer can't consume an item that has not yet been produced.
+			- two kinds of buffers: unbounded buffer, where the producer can always produce new items (no practical limit on the size of the buffer). bounded buffer, where the buffer size is fixed. the producer may have to wait before producing new items when the buffer is full, and the consumer may have to wait to consume items when the buffer is empty and nothing is produced. 
+				
+		b) Message passing:
+			- communication takes place by means of messages exchanged between the cooperating processes.
+			- the message is sent to the kernel, which then relays it to the receipient process
+			- particularly useful in a distributed environment where the communicating processes may reside on different computers connected by a network (like chatting across the internet).
+			- allows send(message) and receive(message).
+			- suppose P and Q want to communicate with each other. they must be able to send/receive messages from each other. for this, a COMMUNICATION LINK must exist between them. this link can be logically implemented by:
+			1) direct/indirect communication:
+				- processes that want to communicate must have a way to refer to each other. the "NAMING" feature is used for this.
+				-> DIRECT COMMUNICATION, each process that wants to comm. must explicitly name the receipient/sender of the message. eg: send(P, msg) //msg sent to P.
+					receive(Q, msg) //receive msg from Q.
+					- a link is established automatically between every pair of communicating processes. the processes need to know only each others identity to communicate. a link exists between exactly two processes, and between each pair of processes, there exists exactly one link.
+					- Symmetry in addressing, where both the sender/receiver processes must name the other in order to communicate.			
+					- a variant of direct comm: only sender names the recipient, recippient is not required to name the sender. eg: send(P, msg), receive(id, msg). it can receive messages from any process as id can vary (can be the id of any process). this scheme employs Asymmetry in addressing.
+					- disadvantage of both schemes: limited modularity. if the name of the process is changed, we would have to change the name used in all process definitions and communications.
+					
+				-> INDIRECT COMMUNICATION, messages are sent to and received from mailboxes, or ports.
+					- a mailbox is abstractly an object into which messages can be placed by processes and from which messages can be removed. each mailbox is uniquely identifiable.
+					- two processes can communicate only if the processes have a shared mailbox.
+					eg: send(A,msg), receive(A,msg) : send msg to mailbox A, receive msg from mailbox A.
+					- a link is created between a pair of processes only if they have a shared mailbox.
+					- a link can be associated with more than two processes.
+					- between each pair of communicating processes, there may be a number of different ilnks, with each link corresponding to one mailbox.
+					- in case of clashes where more than two processes share the mailbox, we can:
+						1) allow a link to be associated with atmost two processes.
+						2) allow at most one process at a time to execute a receive() operation.
+						3) allow the system to arbitrarily choose which process (not both) receives the message.
+					- a mailbox may be owned either by a process or the OS.
+			2) SYNCHRONIZATION, message passing may be either blocking or non-blocking (synch. or asynch.)
+				- synchronous send: the process that sends the message
+				is blocked until the message is received by a process or the mailbox.
+				- asynchronous send: the sending process sends the message and resumes operation.
+				- synchronous receive: the receiver is blocked until a message is available.
+				- asynchronous receive: the receiver is not blocked until it receives a message.
+				
+			3) SOCKETS, used for communication in a client-server based system.
+				- a socket is an endpoint for communication.
+				- one socket for each process communicating over a network.
+				- a socket is identified by an IP address concatenated with a PORT number.
+				- the server waits for incoming client requests by listening to a specified port. once a request is received, the server accepts a connection from the client socket to complete the connection.
+				- servers implementing specific services listen to well-known ports. all ports below 1024 are considered well-known, used for implementing standard services. (like http, telnet, web, etc.)
+
+
+#THREADS
+- a thread is a basic unit of CPU utilization.
+
+- a thread comprises of a thread ID, a program counter, a register set, and a stack. it shares with other threads of the same process its code section, data section, other OS resources like open files and signals.
+
+- multiple threads => multiple tasks at a time.
+- benefits include:
+	1) Responsiveness: let lengthy operation perform on the side (on another thread).
+	2) Resource sharing: threads share resource and memory, allows an application to have different threads of activity within the same address space.
+	3) Economy: alternative to multithreading would be multiple processes for each task, but that is costly as each process would require it's own memory, resources, etc.
+	4) Utilizes multiprocessor architecture: Note - a single-threaded process can only run on one CPU, even if multiple processors are available. multithreaded process means that process can split up tasks into multiple threads which can be split among the processors.
+	
+- two types of threads: user threads and kernel threads.
+
+	-> Hyperthreading (aka Simultaneous multithreading):
+		- hyperthreaded systems allow their processor cores' resources to become multiple logical processors for performance, and so each thread can now execute on each of these logical processors. if n(logicalProcessors) > n(cores), then hyperthreading is enabled on the system. this enables a single physical core to execute two threads at the same time.
+		
+- Difference between fork() and exec() system calls:
+The fork() system call is used to create an exact copy of a running process and the created copy is the child process and the running process is the parent process. Whereas, exec() system call is used to replace a process image with a new process image. Hence there is no concept of parent and child processes in exec() system call.
+
+In fork() system call the parent and child processes are executed at the same time. But in exec() system call, if the replacement of process image is successful, the control does not return to where the exec function was called rather it will execute the new process. The control will only be transferred back if there is any error.
+
+- so exec just replaces the currently running process with the contents of the mentioned file in the parameter, hence the pid of the exec file remains same if it is called from the parent process.  The current process is just turned into a new process and hence the process id PID is not changed, this is because we are not creating a new process we are just replacing a process with another process in exec.
+
+- If the currently running process contains more than one thread then all the threads will be terminated and the new process image will be loaded and then executed. PID of the process is not changed but the data, code, stack, heap, etc. of the process are changed and are replaced with those of newly loaded process.
+
+->THREAD ISSUES:
+
+- if a process is running multiple threads, and one of the thread calls a fork() system call, then does only that thread get duplicated, or all the threads of that process? for this, UNIX systems have two types of fork() calls to serve the two different scenarios.
+
+if exec is called immediately after forking, only the specific thread should be duplicated as all other threads will be replaced by exec. if exec is not called after forking, all threads should be duplicated.
+
+- running a exec call, will, however, replace all the threads of that process with the new process contents.
+
+-- thread cancellation:
+	- terminating a thread before it has completed.
+	- a thread that is to be cancelled is referred to as the target thread.
+
+# PROCESS SCHEDULING:
+- in a multiprogrammed system, a program should always keep running in the CPU (the CPU should not be kept idle). when a process goes for I/O, another process should be loaded in depending on what scheduling algorithm is used.
+
+- process execution consists of a cycle of CPU execution and I/O wait. processes alternate between these two states.
+
+- CPU burst: the time that the process is under CPU exec.
+  I/O burst: the time that the process is under I/O opn.
+  
+- just before the termination of a process, there will always be one final CPU burst.
+
+- when the CPU becomes idle, the OS must select one of the processes in the ready queue to be executed. The selection process is carried out by the short term scheduler (or CPU scheduler). The scheduler selects a process from the processes in memory that are ready to execute and allocates the CPU to that process.
+
+- the dispatcher is the module that gives the CPU control to the process that is selected by the short-term scheduler. time taken by the dispatcher to stop one process and start another is called DISPATCH LATENCY. ideally, the dispatch latency should be less. 
+
+
+-> PREEMPTIVE AND NON PREEMPTIVE SCHEDULING:
+- CPU scheduling decisions can take place under the following four scenarios:
+	1) process switches from the running state to the waiting state (like for some I/O operation).
+	2) process switches from the running state to the ready state (when an interrupt occurs, halting the execution).
+	3) process switches from the waiting state to the ready state (after completion of I/O operation) 
+	4) when a process terminates.
+	
+	- for 1 and 4, a new process should be chosen by the CPU. when scheduling takes place under these circumstances, the scheduling scheme is called non-preemptive or cooperative. so when a process is in the running state, it cannot be withdrawn under non-preemptive scheduling.
+	- for 2 and 3, there is a choice whether the current process that has not finished execution should be executed, or some other process. when scheduling takes place under these circumstances, the scheduling scheme is called preemptive. a running process can be withdrawn for another process.
+	
+	
+# PROCESS SYNCHRONIZATION:
+- cooperating messages can directly affect/be affected by other processes. they either share a logical address space (shared memory system) or store data only through files or messages. (memory passing system)
+
+- concurrent access to shared data may lead to data inconsistency, which arises the need for synchronization. (like in producer consumer problem in shared memory system)
+
+- a situation in which several processes access and manipulate the same data concurrently and the outcome of the execution depends on the particular order in which the access takes place, is called RACE CONDITION. (eg: producer and consumer trying to produce and consume an item at the same time respectively).
+
+-> CRITICAL SECTION PROBLEM:
+	- each process has a segment of code called critical section. in this, the process may be changing common vars, updating table, etc. (accessing shared memory).
+	
+	- thee critical section problem is used to design a set of protocols which can ensure that the Race condition among the processes will never arise.
+	
+	- In order to synchronize the cooperative processes, our main task is to solve the critical section problem. We need to provide a solution in such a way that the following conditions can be satisfied.
+	
+	- no two processes are executing in their critical sections at the same time => when one proces is manipulating shared data, no other process is allowed to do so.
+	
+	1) each process must request permission to enter its CRITICAL SECTION
+	2) The section of code implementing the request is the ENTRY SECTION
+	3) the critical section may be followed by an EXIT SECTION
+	4) remaining code is the REMAINDER SECTION.
+	
+	do{
+		entry section;
+			critical section;
+		exit section;
+			remainder section;
+	} while (TRUE);
+	
+	a solution to the critical section problem must satisfy the following three:
+	1) Mutual exclusion: no two processes can be in their critical sections.
+	2) Progress: if no process is executing in its critical section and now multiple processes want to, only those processes that are not in their remainder sections can take decision as to which process will go in their critical section (without delay)
+	3) Bounded waiting: there exists a limit on the number of processes allowed to enter their critical sections after a process has made a request to enter it and before the request is granted.
+	
+-> Peterson's Solution:
+	- a classic software-based solution to the critical sectino problem.
+	
+	- good algorithmic description of solving the critical section problem at a software level.
+	
+	- restricted to two processes that alternate execution bw their critical and remainder sections. let processes be Pi and Pj
+	
+	- two data items must be shared between the processes:
+		1) int turn : indicates whose turn it is to enter its critical section (i or j)
+		2) boolean flag[2]: indicates whether a process is ready to enter its critical section.
+		
+		structure of process Pi in Peterson's solution:
+		do{
+			flag[i] = true;
+			turn = j;
+			while (flag[j] && turn == j);
+				critical section;
+			flag[i] = false;
+				remainder section;
+		} while (TRUE);
+		
+		structure of process Pj in Peterson's solution:
+		do{
+			flag[j] = true;
+			turn = i;
+			while (flag[i] && turn == i);
+				critical section;
+			flag[j] = false;
+				remainder section;
+		} while (TRUE);
+		
+		
+		what this ensures is that as long as it's j's turn, the while loop keeps running and i is not able to enter its critical section. similarly for Pj.
+		
+		turn is a shared variable, so only one process can run in the critical section at a time. so, MUTUAL EXCLUSION is ensured in this solution. satisfies PROGRESS as well. satisfies BOUNDED WAITING as well. but limited to only two processes.	
+		
+-> TEST AND SET LOCK:
+	- a hardware based solution to the critical section problem.
+	- shared lock variable, which takes two values, 0 or 1. (0=>unlocked, 1=>locked)
+	- before entering crit.sec., process enquires about the lock. this is the testing part.
+	- if locked, process keeps waiting till lock is unlocked (basically some other process is in its critical section right now)
+	- if not locked, it takes the lock, sets the lock, executes the critical section.
+	
+	//target is the shared lock variable. it is a pointer as it is shared between all processes.
+	boolean TestAndSet( boolean *target ){
+		boolean rv = *target; //if target is true, some process is already executing. so current process enters while loop. if it is false, rv is false, while loop breaks, current process goes in critical section. but the *target = TRUE in the next line ensures that any other process gets stuck in the while loop as for them, the TestAndSet function will return TRUE (the current process set the LOCK TO TRUE)
+		*target = TRUE;
+		return rv;
+	}
+	- this is an atomic operation. when a process checks/sets a lock, all this happens as a single operation that is uninterrupted by other processes.
+	
+	//P1
+	do{
+		while(TestAndSet(&lock));
+			critical section
+		*lock = FALSE;
+			remainder section	
+	} while (TRUE);
+	
+	- it satisfies mutual exclusion, but does not satisfy bounded waiting. 
+	
+
+-> SEMAPHORES:
+	- techinque to manage concurrent processes (solve critical section problem) by using a simple non-negative integer value called as a semaphore.
+	- shared between threads/processes.
+	- S is an integer variable, accessed only through two standard atomic operations: wait() (P) and signal() (V).
+	
+	wait() operation:				signal() operation:
+	P (Semaphore S){				V (Semaphore S){
+		while (S<=0) ;					S++;
+		S--;						}
+	}
+	
+	basically while S<0, some process is already in its critical section and this process has to wait.
+	
+	signal() called when the the process in critical section completes its operation.
+	
+	- S is shared between processes. when one process is modifying S, no other process can modify S (executed indivisibly).
+	
+	1) Binary Semaphore:
+		- value ranges between 0 and 1. aka Mutex Locks (provide mutual exclusion). S initially is 1.
+		- S=0, some process is already in its critical section and the requesting process has to wait.
+		- S=1, requesting process is free to enter the critical section or use the shared resource.
+	
+	2) Counting Semaphore:
+		- value can range over an unrestricted domain. used to control access to a resource that has multiple instances.
+		- set the initial value of semaphore to the number of instances of the shared resource. (let x)
+		- so, while S > 0, x number of processes can access the shared resource, after which any further process gets trapped in the while loop until a resource becomes free.
+		
+	-> disadvantages of semaphores:
+		1) requires busy waiting. any process not in critical section must loop continuously in the entry code. it wastes CPU cycles (unproductive). called as a spinlock (process "spins" waiting for the lock)
+		this can be solved by: rather than engaging in busy waiting, the process can block itself. the block opeartion places a process into a waiting queue associated with the semaphore, and the process is now in waiting state. then, control is transferred to the CPU scheduler which selects another process to execute.
+		
+		2) that also has problems. may result in DEADLOCKs, where two or more processes are waiting indefinitely for an event that can be caused only by one of the waiting processes.
+		
+# The Bounded-Buffer Problem:
+	- 
