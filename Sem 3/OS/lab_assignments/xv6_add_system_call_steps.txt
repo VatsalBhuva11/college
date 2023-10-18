@@ -1,0 +1,27 @@
+SYSTEM CALL
+1) syscall.h - give number for system call
+
+2) syscall.c - 
+	a) assign a pointer to a function that will contain the definition of the system call
+so, now we have an array of function pointers, where each pointer can be accessed by the number of the system call, and these pointers will point to the function definition of the system call.
+	b) also create a function prototype for the function that will be pointed to by the function pointer, and that will contain the function definiton of the system call.
+	c) For example, sys_fork is the function that handles the fork system call, and it is assigned to syscalls[SYS_fork]
+	
+3) sysproc.c - actually implementing the system call function.
+
+4) usys.S -
+	a) till this point, the system call has been added. but how can the user program execute in kernel mode (via system call)? it requires an interface for that. this file achieves that.
+	b) the user program can make a system call request using this interface.
+	
+5) user.h - contains function prototypes of the functions that the user will use to make the system call.
+	a) the user can use these functions to make the system call. this is different from the function that contains the logic of the system call.
+	b) this function will make the system call, which will then be executed by the kernel
+	c) this linkage of this function to the system call is done in the usys.S file.
+	
+6) create a test program to actually test the system call. #include "user.h" to use the function to make the system call. put this test program in the xv6 folder.
+
+7) Makefile - make the test program visible to the user to execute when ls is typed.
+	a) in UPROGS, add the name of the .exe file of the test program that will be created.
+	b) in EXTRA, add the .c file of the test program.
+	
+8) make clean, make, make qemu!
