@@ -1,0 +1,119 @@
+# CLASS DIAGRAMS:
+	- visibility:
+		1) +  public
+		2) - private
+		3) # protected
+		4) ~ default
+
+
+	# Relationships in Class Diagram:
+	- Association: Simple Relationship 
+			- Aggregation: HAS A relation. eg: a bank branch has many accounts associated to it. (not necessarily one to many, can be one to one also)
+										Branch		/\_________________    Account
+													\/
+													
+			- Composition: Without one class, the other class cannot exist. eg: a branch can't exist if bank does not.
+									Bank       (filled diamond) ------------       Branch
+									
+			- includes multiplicity between the associating classes. basically how many of one can be associated to the other. 1..5 means 1,2,3,4,5.  1..* means 1,2,3,4....
+
+	- Generalization: Inheritance. One class inherits the properties of the other class. (Hollow arrow)
+									Account   <|----------------------------- Saving Account, Loan Account
+									
+									
+	- Dependency: an account is dependent on it's verification. (dotted, hollow arrow).
+	
+	
+	- The order from strong to weak is: 
+				
+				inheritance → implementation → composition → aggregation → association → dependency 
+				
+				
+	- https://blog.visual-paradigm.com/what-are-the-six-types-of-relationships-in-uml-class-diagrams/
+	
+	
+
+practice/notes.txt
+# ABSTRACT CLASSES:
+	- any class that contains abstract methods is abstract.
+	- can contain non-abstract fields/methods as well.
+	- all abstract methods must be implemented by the child classes.
+	- 
+
+	
+# INTERFACES:
+	- don't need the abstract keyword for methods. by default, all are abstract.
+	- a child class can implement as many interfaces as it wants, but can extend only one class (in java)
+	- a class can extend some class and implement another class.
+	- every field is by default, static and final => it must have a default value (since final)
+
+	
+# CONSTRUCTORS:
+	- special type of method that is run by default whenever an object is instantiated.
+	- if there is no constructor for a class, java by default assigns it a "default no-args constructor", that takes no args
+	- if there is some defined constructor in the class, then there is no default no-args constructor. to make use of the default no-args constructor, it has to be manually declared by <Class>(){}
+	- by default, class fields are either null or 0
+	- this.name = name used to differentiate the name variable of the class, and that of the parameter. the same outcome can be achieved if we used, say n, as the parameter, and then set name = n. this is the same as this.name = n
+	- can have multiple constructors within a class. when instantiating the object, that constructor is called whose parameter list (of datatypes, and their order) matches the given parameter list when instantiating the object.
+	- one constructor of a class can call another constructor within the class. it can only call one constructor, and has to be called at the top inside that constructor.
+	- one common thing to do is, define a constructor that can take all fields as parameters and assign them respectively, and declare a default constructor (){} that sets default values to these fields if none are entered.
+	so something like Default(){ this("default1", 0, "default2"); }
+
+
+# THIS KEYWORD:
+	- refers to the current object. used in getter/setter methods to access/update private fields. can be avoided by having a different parameter name, but to keep the code cleaner and readable, we use the same name but use "this".
+	- can be used inside constructors to assign the fields for the object being instantiated.
+	- this cannot be used inside a static method, as static methods can be run without being instantiated, and using "this" inside them would not refer to anything if it is called using the Class and not an object.
+
+	
+# FINAL KEYWORD:
+	- final classes, methods, variables.
+	- declaring a class as final would prevent other classes from inheriting this class.
+	- final methods cannot be overriden by a subclass. the subclass will have to use the method provided by parent.
+	- final variables can only be assigned once. they cannot be altered. can be used for object references to.
+	so, final Test t = new Test() would mean that we cannot assign t = new Test() again, as the reference t is final.
+	we can, however, do final Test t; t = new Dog();. but now, it cannot be assigned again.
+	- mainly used for creating Constant classes, Constant variables, etc.
+	- common convention is CAPS_WITH_UNDERSCORE
+	
+	
+# STATIC KEYWORD:
+	- static fields, methods apply to the entire class and not to specific objects. they are shared between objects.
+	- eg: private static int count = 0; can be used to store the count of the number of objects that instantiate that class. in the constructor, we can just increment count. a new object when created will have the most recent count value since count is set as static.
+	- can also create a static getter method to access the static field from outside.
+	- we cannot refer to non-static (object specific) fields inside static methods. we can access static fields and methods through objects though (recommended to access them using the Class and not through objects)
+	- used for constants.
+	
+	
+# POLYMORPHISM:
+	- many forms of the same thing.
+	- the classes can do the same things in different ways. requires the usage of inheritance (for overriding), but not for overloading.
+	- overriding basically means implementing the same method signature as in the parent class. 
+	- overloading basically means having different signatures for the same method name within a class.
+	- Parent p = new Child(); using the p reference, we cannot access specific fields declared in the Child object (even if fields are overriden from the fields in the Parent class). the p reference will access the fields from the Parent class only. we can, however, access overriden methods in the Child object using the parent reference. if there is no overriden method, then the parent method is accessed.
+	- the specific attributes of the child classs can be accessed only by typecasting the p reference to that of the child class by ((Child) p).child_method();
+	- the methods are checked with the parent class during compile time, and are checked and executed during runtime (whether child class has overriden that method or not)
+	
+	SO: Parent p = new Child();
+	1) if a method is declared both in Parent and Child, the method is resolved during compile-time in the Parent class, but run using the Child class. This behavior is referred to as virtual method invocation, and the
+methods are referred to as virtual methods.
+	2) if a method is declared only in Child class but not in Parent class, compile-time error.
+	3) if a method is declared only in Parent class, then that is run.
+	4) if a field is declared both in Parent and Child, only the Parent's field is accessed using the p reference. the Child's field can be accessed by ((Child) p).child_field.
+	5) if a field is declared only in Child class, then compile-time error.
+	6) if a field is declared only in Parent class, then that is accessed using p.
+
+	- OVERRIDEN FIELDS CANNOT BE ACCESSED DIRECTLY THROUGH PARENT REFERENCE, BUT OVERRIDEN METHODS CAN BE.
+	- UNIQUE METHODS AND FIELDS CANNOT BE ACCESSED USING PARENT REFERENCE (REQUIRE TYPECASTING TO BE ACCESSED). INHERITED METHODS CAN BE, BUT NOT INHERITED FIELDS (REQUIRE TYPECASTING)
+	
+		Child c = new Child();
+	1) we can access the parent's properties by upcasting. ((Parent) c).parent_prop even if that prop is not common to both (it should however exist in the Parent class if we're upcasting.)
+	
+	- once a particular object is referenced by a specific type of reference, only that reference and its parents can be used to reference that object. any other reference type cannot refer to that object.
+	- so, if i have Child c = new Child(); then Parent p = c; is valid
+	- but, if i have Parent p = new Child(); i cannot do Child c = p; cuz p can access un-inherited resources from parent, but c will not be able to. so the conversion would not be allowed. but i can do: p = new Parent();
+	- Parent p = new Parent(); => p = new Child(); is valid
+	- Child c = new Child(); => c = new Parent(); is invalid.
+	
+	- in general, in any number of levels in multi-level inheritance, a parent reference can always be assigned to any object of its subclass.
+	

@@ -606,4 +606,93 @@ A low P/E ratio might indicate that the current stock price is low relative to e
 						  = E1 (1-b)/(r-g)
 					=> P/E = P0/E1 = (1-b)/(r-g) = (1-b) / (r- ROE * b)
 					 		ROE= Return on book equity = Net Earnings /Book value of Equity
+					 		
+					 		
 
+# LECTURE 8:
+	- How a firm’s operations are financed is referred to as its capital structure.
+	
+	- Capital structure decision: Describing a firm’s capital structure is finding the right financing mix between the financing choices: Equity vs. Debt.
+	
+	- A firm’s capital structure is given by its debt to equity ratio.
+	
+	-> Equity financing:
+		- Private firm: founders and others contribute money
+		- Publicly-traded firm: shareholders contribute money in the initial
+		public offering (IPO). Subsequently, more funds can be raised in a
+		seasoned equity offering.
+		- Retained earnings: shareholders money gets “plowed back in.”
+		
+	-> Debt financing:
+		- Bank loans
+		- Corporate bonds
+		
+	- The optimal capital structure that maximizes the value of the firm is also the one that minimizes the cost of capital.
+	
+	-> Financing Policy:
+		• But what is the best source of funds?
+			• Internal funds (i.e., cash)?
+			• Debt (i.e., borrowing)?
+			• Equity (i.e., issuing stock)?
+			
+		• Moreover, the policy depends on different kinds of sources
+			• internal funds (e.g., cash reserves vs. cutting dividends)
+			• debt (e.g., Banks vs. Bonds)
+			• equity (e.g., VC vs. IPO)
+	
+	- Levered vs unlevered:
+		– A company that has no debt is called an unlevered firm; a company
+that has debt in its capital structure is a levered firm.
+
+	# Modigliani-Miller (MM) Theorem:
+		- The Modigliani-Miller theorem (M&M) states that the market value of a company is correctly calculated as the present value of its future earnings and its underlying assets and is independent of its capital structure. (Note: Capital structure is how a company funds its overall operations and growth.)
+		
+		- At its most basic level, the theorem argues that, with certain assumptions in place, it is irrelevant whether a company finances its growth by borrowing, by issuing stock shares, or by reinvesting its profits.
+		
+		- Companies have only three ways to raise money to finance their operations and fuel their growth and expansion. They can borrow money by issuing bonds or obtaining loans; they can re-invest their profits in their operations, or they can issue new stock shares to investors. The Modigliani-Miller theorem argues that the option or combination of options that a company chooses has no effect on its real market value.
+					
+		- Implications of Proposition I:
+			1. A firm’s capital structure is irrelevant.
+			2. A firm’s weighted average cost of capital (WACC) is the same no matter what mixture of debt and equity is used to finance the firm.
+
+		- Implications of Proposition II:
+			1. The cost of equity rises as the firm increases its use of debt financing.
+			2. The risk of the equity depends on two things: the riskiness of the firm’s operations (business risk) and the degree of financial leverage (financial risk).
+			
+												re = ra + (ra - rd) D/E
+												
+		• Do real-world managers follow MM by treating capital structure decisions
+with indifference?
+		• Unfortunately, virtually all companies in certain industries, such as
+		banking, choose high debt-equity ratios.
+		• Conversely, companies in other industries, such as pharmaceuticals, chose
+		low debt-equity ratios.
+		• In fact, almost any industry has a debt-equity ratio to which companies in
+		that industry tend to adhere.
+		• Thus companies do not appear to be selecting there degree of leverage in
+		a random manner.						
+		
+	-> Capital Structure and Corporate Taxes
+		• Managers pay great attention to the tax implications of their financial
+		decisions.
+		• Financial transactions are taxed (e.g. taxes on capital gains, dividends, etc.)
+		• Different financial transactions are taxed differently:
+			– Interest payments are considered a business expense, and tax exempt
+		for the firm.
+			– Dividends and retained earnings are taxed.
+			– In Indian system, capital gain tax is less than dividend tax.
+		• Why interest expenses is tax deductible?
+			– It is an incentive, subsidy to encourage entrepreneurs, employers etc.
+		• Other things equal, the firm’s financing decision might aim at minimizing
+		its tax burden.						
+		
+		- Claim: Issuing debt saves taxes and increases a firm’s value.
+		
+	# Modigliani-Miller Proposition with tax case
+		- Modigliani-Miller Proposition I with Taxes
+			• The values of two firms in the same risk class will differ by the present
+			value of their tax shield.
+			VL = VU +PV (debt tax-shield)
+			
+		- Modigliani-Miller Proposition II with Taxes
+			• The WACC declines as the debt-equity ratio grows
