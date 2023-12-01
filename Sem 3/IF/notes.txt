@@ -183,10 +183,20 @@ LEC 1
 	• It's a sequence of cash flows at different points in the future, including the
 	present, but not the past.
 	
+	- An asset is a resource with economic value that an individual, corporation, or country owns or controls with the expectation that it will provide a future benefit.
+	
+	- An asset can be thought of as something that, in the future, can generate cash flow, reduce expenses, or improve sales, regardless of whether it's manufacturing equipment or a patent. 
+	
 	• Valuing an asset requires valuing a sequence of cashflows
 		- Sequences of cashflows are the “basic building blocks” of finance
 					Value of Asset_t = V_t{CF_t, CF_t+1, CF_t+2...}
 		- Vt is obtained from the market.
+		
+	- Asset valuation is the process of determining the fair market or present value of assets, using book values, absolute valuation models like discounted cash flow analysis,
+	
+	- The term net tangible assets refers to the total physical assets of a company minus all intangible assets and liabilities. In other words, net tangible assets focus on physical assets such as property, plant, and equipment (PP&E), as well as inventories and cash instruments.
+	
+	- Physical assets are anything that is listed on a company's balance sheet while intangible assets are those without a physical form.
 		
 	-> Time value of money:
 		• Money you have in hand now is more valuable than money you receive in
@@ -195,13 +205,27 @@ LEC 1
 			- Opportunity cost of money.
 			- Inflation erodes its buying power
 		• This is called the time value of money
+		
 		- It is only with respect to reinvestment opportunities of funds received early that future cash flows are taken to be less valuable than the present ones. Funds received today would earn a rate of return which may not be possible in case they are received later.
+		
 		- Net present value (NPV) is the difference between the present value of cash inflows and the present value of cash outflows over a period of time. 
+		
 		- The value of a sequence of cashflows is simply equal to today's dollars, often called present value.	
+		
 		- Net present value (NPV) is used to calculate the current value of a future stream of payments from a company, project, or investment.
+		
 		- To calculate NPV, you need to estimate the timing and amount of future cash flows and pick a discount rate equal to the minimum acceptable rate of return. 
+		
 		- The discount rate refers to the rate of interest that is applied to future cash flows of an investment to calculate its present value. It is the rate of return that companies or investors expect on their investment.
+		
+		- As another example, say you have the option of receiving $10,000 now or $10,000 two years from now. Despite the equal face value, $10,000 today has more value and utility than it will two years from now due to the opportunity costs associated with the delay. In other words, a delayed payment is a missed opportunity.
+		
+		- In financial modeling, a discount factor is a decimal number multiplied by a cash flow value to discount it back to its present value. The factor increases over time (meaning the decimal value gets smaller) as the effect of compounding the discount rate builds over time.
+		
 		- If the NPV of a project or investment is positive, it means its rate of return will be above the discount rate.
+		
+		- A rate of return (RoR) is the net gain or loss of an investment over a specified time period, expressed as a percentage of the investment’s initial cost.
+		
 		• Implicit assumptions/requirements for net present value calculations
 			– Cashflows are known (magnitudes, signs, timing) so there's no
 			uncertainty
@@ -235,6 +259,8 @@ LEC 1
 			$1 × 1.05 × 1.05 × … × 1.05 = $1.05^T
 		• $x today is equivalent to $x*(1+r)^T in T years
 		• $x in T years is equivalent to $x / (1+r)^T today		
+		
+		- higher the NPV, higher is the value on that investment. having a higher "r" means expecting a higher return, which would lower the value of the investment accordingly.
 		
 	-> Perpetuity:
 		- Perpetuity is a situation where a stream of cash flow payments continues indefinitely or is an annuity with infinite maturity. Perpetuity pays constant cashflow C forever.
@@ -607,8 +633,367 @@ A low P/E ratio might indicate that the current stock price is low relative to e
 					=> P/E = P0/E1 = (1-b)/(r-g) = (1-b) / (r- ROE * b)
 					 		ROE= Return on book equity = Net Earnings /Book value of Equity
 					 		
-					 		
+		
+# LEC 5:
+	-> Capital budgeting
+	- In capital budgeting, we change our perspective from an investor to consider us as a corporate financial officer, or a project manager.		
+	
+	- Search for investment opportunities. Make financial decisions about whether or not to take on certain projects.
+	
+	- The main objective of project is creation of value for its stakeholders. The value is created financially by creating net cash flow.
+	
+	- Capital Budgeting is the process of determining which real investment projects should be accepted given an allocation of funds from the firm.
+	
+	- The typical capital budgeting method (directly or indirectly) involves three steps:
+		1. estimating cash flows generated by the project,
+		2. finding an adequate discount rate for each cash flow, and
+		3. estimating the initial cost of the investment (including opportunity
+		costs).
+		• Estimate all cash flows for each project.
+		• Evaluate the cash flows.
+		• Make the accept/reject decision.
+			– Independent projects: Accept/reject decision for a project is not affected by the accept/reject decisions of other projects.
+			– Mutually exclusive projects: Selection of one alternative precludes another alternative.
+			 		
+	-> Net Present Value (NPV) Rule:
+	• Objective: Increase firm’s current market value
+	
+	• Every single asset or a particular project can be reduced, essentially, to a sequence of cash flows.
+	
+	• The current market value is simply the NPV where the discount rates are adjusted the risk relevant to that particular cash flow. 
+	
+	- High risk, high return, higher discount rate
 
+		-> Investment decision criteria:
+		- Independent Projects:
+			– NPV >= 0 - Accept
+			– NPV <  0 - Reject
+		- Mutually Exclusive Projects:
+			– Select the project with the highest NPV, assuming NPV  0
+
+	- The NPV rule dominates all other rules because it takes into account the maximum amount of information, including timing of all cash flows and risks, and makes the correct decision based on value creation.
+	
+	• To compute the NPV of a project, we need to consider:
+		– Cash flows
+		– Discount rates
+		– Strategic options
+	
+	- The net present value is simply the difference between the present value of all cash flows inflows and the present value of all cash outflows. In other words, NPV is simply value minus cost.
+									NPV=present value –present cost
+									
+	• There are 3 possible categories NPV will fall into:
+		• Positive NPV: If NPV is positive, then it means the asset is worth more than what you are paying.
+		• Negative NPV: If NPV is negative, then it means the asset is worth less than what you are paying.
+		• Zero NPV: If NPV is zero, then it means you’re paying exactly what the asset is worth.								
+	
+	-> Discount Rates
+	• A project's discount rate (i.e., required rate of return) is the expected rate of return demanded by investors for the project.
+	
+	• The discount rate in general depend on the timing and risk of the cashflow.
+	
+	• The discount rate is usually different for different projects. Therefore, it is incorrect to use a company-wide “cost of capital” to discount cash flows of	all projects.
+	
+	• What is the required rate of return on a project?
+		– Simple case: single discount rate can be used for all cashflows of a project.
+		– General case: the term structure of discount rates is different for different cash flows.
+		
+	-> Cost of Capital:
+	- The cost of capital refers to the required return necessary to make a project or investment worthwhile. This is specifically attributed to the type of funding used to pay for the investment or project. If it is financed internally, it refers to the cost of equity. If it is financed externally, it is used to refer to the cost of debt.
+	
+	- The cost of capital is the minimum rate needed to justify the cost of a new venture, where the discount rate is the number that needs to meet or exceed the cost of capital.
+	
+	- Many companies calculate their weighted average cost of capital (WACC) and use it as their discount rate when budgeting for a new project.
+	
+	- The company's lenders and owners don't extend financing for free; they want to be paid for delaying their own consumption and assuming investment risk. The cost of capital helps establish a benchmark return that the company must achieve to satisfy its debt and equity investors.
+
+	• The cost of capital is simply the return expected by those who provide capital for the business.
+	• Any investment a company makes has to earn enough money that investors get the return they expect and debt holders can be repaid.
+	
+	• Use CAPM to estimate cost of capital
+		r_project = r_f + B_proj (E(r_m) - r_f)
+	• What matters is the project beta, not the company beta!
+	• What if project beta is unknown?
+		– Find comparable company and use its beta.
+		– Find comparable historical project and use its cashflows to estimate
+		beta.
+		– Use intuition and empirical judgment to guesstimate beta.
+	
+	-> Project Interaction
+	• Often we have to decide on more than one project among a set of projects.
+	
+	• For mutually independent projects, if there's no project interactions, take them all as long as they have positive NPV.
+	
+	• For projects dependent of each other, if there are project interactions(e.g., mutually exclusive—accepting one, rules out the others), we have to compare their NPVs, pick the one that's got the highest NPV.
+	
+	-> Alternatives to NPV
+	• In practice, investment rules other than NPV are also used:
+		- Payback Period
+		- Profitability Index (PI)
+		- Internal Rate of Return (IRR)
+		
+	• These rules sometimes give the same answer as NPV, but in general they do not. We should be aware of their shortcomings and use NPV whenever possible.
+	
+	• The bottom line is: The NPV rule dominates these alternatives.
+	
+		-> Payback Period:
+		- In words, k is the minimum number of period required to “recover” the initial investment I0. recovery => negate the initial investment (no need to exceed it, just recover it. cashflow >= I0)
+
+			-> • Decision criterion using payback period
+			- Independent Projects:
+				– Payback period (k ) <= some fixed threshold t* - Accept (recover cost within required time)
+				– Payback period (k ) > some fixed threshold t* - Reject
+			- Mutually Exclusive Projects:
+				– Among all the projects having k ≤ t*, accept the one that has the minimum payback period.
+				
+			-> Problems with payback period
+				– It ignores time-value of money
+				– It doesn't take into account scale
+				– It ignores cash flows after the payback period k	
+				
+			• Discounted Payback Period
+			– Taking into account appropriate discounting, we have the discounted payback period.
+			– Discounted payback period is the minimum t , same as payback, but discounted cashflows are considered.
+				• Problem: It still ignores the cash flows after the discounted payback period k.
+				
+			=> use NPV!
+				
+				
+		-> Profitability Index:
+		• Profitability Index (PI) is the ratio of the present value of future cash
+flows and the initial cost of a project: PI = PV/-CF0 = PV/I0, PV = sum of discounted cashflows till t=T
+
+		• Decision criterion using PI
+			-> For independent projects:
+				– Accept all projects with PI greater than one (this is identical to the NPV rule)
+			-> For mutually exclusive projects:
+				– Among the projects with PI greater than one, accept the one with the highest PI.
+				
+		• Problems with PI
+			- PI ignores scale. The scaling can lead to wrong answers in comparing mutually exclusive projects.
+			- PI gives the same answer as NPV when
+				-There is only one cash outflow, which is at time 0.
+				-Only one project is under consideration.
+			- The profitability index simply tells whether something is a positive or negative NPV. It does not tell how much NPV is generated from a particular project.		
+			
+		=> USE NPV
+		
+		
+		-> Internal Rate of Return (IRR):
+		• IRR is the implied rate of return of the project. IRR is that yield, or that rate of return, such that it makes the project break-even.
+		- find r such that discounted cashflows upto required time period = I0.
+		• IRR is the rate of return at which the present value of the future cash flows is actually equal to the amount of investment (NPV=0).
+		• Finding out the IRR from the above equation is not a simple equation- solving exercise. We need to use either trial and error method or interpolation method to determine the required IRR, making the equation equal to zero.
+				
+		• The trial and error process is as follows:
+			• Start with a guess of the discount rate ‘r’
+			• Calculate NPV using the ‘r’
+			• If the NPV is close to zero, then ‘r’ is the IRR
+			• If the NPV is positive, increase ‘r’ (which reduces the discounted cash flow value)
+			• If the NPV is negative, decrease ‘r’
+			• Continue the process until NPV reaches zero
+			
+			• Decision criterion using IRR
+			- Independent Projects:
+				– Accept a project if its IRR is greater than some fixed hurdle rate IRR* (cost of capital).
+			- Mutually Exclusive Projects:
+				– Among the projects having IRR's greater than IRR*, accept one with the highest IRR
+				
+		• Assumptions in IRR calculation
+		– There is only one cash outflow, which occurs at time 0.
+		– All the cash flows are non-negative.
+		
+		• IRR rule leads to the same decisions as NPV if
+			1. There is only one cash outflow, which occurs at time 0
+			2. Only one project is under consideration
+			3. The opportunity cost of capital is the same for all periods
+			4. The threshold rate is set equal to opportunity cost of capital
+			
+		• Problems with IRR
+			– Non-existent or multiple IRRs in certain cases.
+			– Incorrect rankings for loans and other projects with negative cashflows
+			in future periods.
+			– Ignore scale because it's a rate of return.
+			- sometimes even when CoC is met, there can be negative NPV for a project that completes the requirement of IRR but is not valuable.
+			
+		=> USE NPV!!!!!!!!!!!
+		• NPV - Assumes reinvestment of future cash flows at the cost of capital.
+		• IRR - Assumes reinvestment of future cash flows at the project’s IRR.
+		• In addition, the NPV method maximizes the value of the firm.
+		
+	-> Capital rationing
+	• It is limiting the size of the capital budget. There's a limit to how much
+	money we can invest.
+		– instead of choosing every project that has an NPV greater than zero, select the group of projects with the highest combined NPV possible (sum of indivdual NPVs of the selected projects) within the capital constraint.		
+	
+	• In cases where capital must be rationed, a firm should rank projects
+according to their Profitability indexes.
+Profitability Index = PV / Investment
+	• Projects with highest present value (PV) per dollar of investment are considered more attractive and the investment dollars are first allocated to them so that the returns of the firm are maximized.
+	
+	-> Other issues in capital budgeting
+	• Competitive response
+		– Cashflow forecasts should take into account responses of competitors (e.g., investment in a new technology).
+		
+	• Other considerations like political, social, cultural, implementation, all
+	sorts of practical aspects.
+	
+	• Sources of positive-NPV projects
+		– Short-run competitive advantage (right place at right time)
+		– Long-run competitive advantage (patent, technology, economies of scale, product-differentiations etc.)
+		
+		
+# LEC 6:
+	-> Accounting
+	• Accounting is the language of business.
+	• It is the method companies use to communicate financial information to their employees and to the public.
+	• Accounting is the process of identifying, recording, and summarizing economic information and reporting it to decision makers.
+	
+	- two types of accounting (based on who they serve or who the accountancy is done for):
+		• Financial accounting serves external decision makers, such as stockholders, suppliers, banks, and government agencies.
+		• Management accounting serves internal decision makers, such as top executives, department heads, college deans, hospital administrators, and people at other management levels within the organization.
+
+	-> Financial statements
+	• Financial statements are accounting reports with past performance information that a firm issues periodically (usually quarterly and annually).
+	• Every public company is required to produce these major financial statements:
+		– the balance sheet
+		– the income statement
+		– the statement of cash flows
+		– the statement of stockholders’ equity
+		
+	• In addition to the above statements, annual reports usually contain:
+		• Footnotes to the financial statements
+		• A summary of the accounting policies used
+		• Management’s Discussion and Analysis (MD & A) of the financial results
+		• The auditor’s report
+		• Management’s report on its responsibility and on internal controls
+		• Comparative financial data for a series of years
+		• Narrative information about the company	
+		
+	-> Accounting standards
+	• Generally Accepted Accounting Principles (GAAP) is a common set of rules and standards followed in recording transactions and in preparing financial statements.
+	
+	• This standardization also makes it easier to compare the financial results of different firms.
+	
+	• The annual financial statements usually are accompanied by a neutral third party, known as an auditor’s report.
+	
+	• An audit is a systematic examination of a company’s financial statements to determine if the amounts and disclosures in the reports are fairly stated and follow GAAP.
+	
+	• International Financial Reporting Standards (IFRS) is a set of international accounting standards adopted in many countries against GAAP.
+	
+	- The ultimate goal of GAAP is to ensure a company's financial statements are complete, consistent, and comparable. This makes it easier for investors to analyze and extract useful information from the company's financial statements, including trend data over a period of time. It also facilitates the comparison of financial information across different companies.
+	
+	-> Objectives of Financial Statement Analysis
+		1.Provide the necessary information required by the users (i.e., supplier,
+		customer, managers, creditors, investors etc.)for the informative
+		decision making
+		
+		2.Assessing the current and past performance of the company
+			• How fast are the revenues growing (Demand Analysis)? –Growth
+			• What is the operating margin? –Profitability
+			• What is the efficiency of asset usage? –Turnover
+			• Do I have an optimal mixture of debt and equity financing? –Financial Leverage
+			
+		3.Historical, present, and expected ratios helps in decision making
+			• Predict expected returns
+			• Assess the risk associated with those returns
+
+		4.Useful for evaluation, planning, and valuation
+		
+		5.Minimize the Chances of Fraud
+		
+		6.Eliminating Discrepancies if any
+
+
+	-> Some Basic Concepts on Accounting:
+		• Entity concept: An accounting entity is an organization or a section of an
+organization that stands apart from other organizations and individuals as
+a separate economic unit.
+
+		• Going Concern Convention: The assumption that an entity will persist indefinitely.
+			- This notion implies that a company will use its existing resources, such
+			as plant assets, to fulfil its general business needs rather than sell
+			them in tomorrow’s real estate or equipment markets.
+			- The going concern principle assumes that any organization will continue to operate its business for the foreseeable future. The principle purports that every decision in a company is taken with the objective in mind of running the business rather than that of liquidating it.
+
+		• Materiality Convention: An item should be included in a financial
+		statement if its omission or misstatement would tend to mislead the
+		reader of the financial statements under consideration.
+
+		• Measuring Income:
+		- The main difference between accrual and cash basis accounting lies in the timing of when revenue and expenses are recognized. The cash method provides an immediate recognition of revenue and expenses, while the accrual method focuses on anticipated revenue and expenses.
+		
+			– Accrual Basis: Accrual accounting records revenue and expenses when transactions occur but before money is received or dispensed. For example, a company might have sales in the current quarter that wouldn't be recorded under the cash method. The related revenue is expected in the following quarter. An investor might think the company is unprofitable when, in reality, the company is doing well.  
+				Accrual accounting is governed by two important principles: revenue recognition and matching.
+			– Cash Basis: Cash basis accounting records revenue and expenses when cash related to those transactions actually is received or dispensed. The cash basis method is not acceptable under GAAP.
+			
+		• Recognition of Revenues: To be recognized under U.S. GAAP, revenues
+		must ordinarily satisfy two criteria:
+			– They must be earned-this involves the delivery of goods or services to
+			a customer.
+			– They must be realized or realizable: when a company receives cash or
+			claims (customer’s promise to pay) to cash in exchange for goods or
+			services.
+			
+		• Matching: The recording of expenses in the same time period that we
+		recognize the related revenues. Hand-in-hand with accrual accounting
+		
+		• Accounting Time Period
+			– Fiscal year: The year established for accounting purposes, which may
+			differ from the calendar year. An entity may also elect to report financial data through the use of a fiscal year. A fiscal year arbitrarily sets the beginning of the accounting period to any date, and financial data is accumulated for one year from this date. For example, a fiscal year starting April 1 would end on March 31 of the following year. 
+			– Interim periods: The time spans established for accounting purposes
+			that are less than a year. An interim period is a financial reporting period that is shorter than a full fiscal year
+			
+		• Double-Entry Accounting System
+			– Every transaction affects at least two accounts.
+			– Accountants analyse each transaction to determine which accounts it
+			affects, whether to increase or decrease the account balances, and
+			how much each balance will change.
+			
+		• Debit: An entry or balance on the left side of any account.
+		
+		• Credit: An entry or balance on the right side of any account.
+		
+	-> Basic Financial Statements
+	• The balance sheet, or statement of financial position, portrays the
+	financial position of the company by showing what the company owns and
+	what it owes at the report date.
+	
+	• The income statement or statement of financial performance reports on
+	how the company performed and shows how much a firm earned in the
+	period of analysis. The income statement is sometimes called a profit and
+	loss statement.
+	
+	• The statement of cash flows, which reports on cash inflows and outflows
+	to the firm during the period of analysis .
+	
+		1) The Balance Sheet
+		- The term balance sheet refers to a financial statement that reports a company's assets, liabilities, and shareholder equity at a specific point in time. Balance sheets provide the basis for computing rates of return for investors and evaluating a company's capital structure.
+		
+		• The balance sheet is a financial snapshot of the firm. The Balance
+		sheet is always divided into two halves :
+			1. Assets
+			2. Liabilities and Owners’ (Shareholders’) Equity.
+		• The balance sheet provides the details of the accounting identity:
+			Assets = Liabilities + Owners' equity
+		- a company has to pay for all the things it owns (assets) by either borrowing money (taking on liabilities) or taking it from investors (issuing shareholder equity).
+		- If a company takes out a five-year, $4,000 loan from a bank, its assets (specifically, the cash account) will increase by $4,000. Its liabilities (specifically, the long-term debt account) will also increase by $4,000, balancing the two sides of the equation. If the company takes $8,000 from investors, its assets will increase by that amount, as will its shareholder equity.
+			
+			-> Assets
+			• Assets are divided into current and long-term assets.
+				• Current Assets: Current assets are either cash or assets that could be
+				converted into cash within one year. This category includes the following:
+				1. Cash and other marketable securities, which are short-term, low-
+				risk investments that can be easily sold and converted to cash
+				
+				2. Accounts receivable, which are amounts owed to the firm by
+				customers who have purchased goods or services on credit
+				
+				3. Inventories, which are composed of raw materials as well as
+				work-in-progress and finished goods
+				4. Other current assets that includes items such as prepaid
+				expenses (such as rent or insurance paid in advance) etc.
+		
+				
 # LECTURE 8:
 	- How a firm’s operations are financed is referred to as its capital structure.
 	

@@ -1,0 +1,729 @@
+# LEC 1:
+	-> What is Marketing?
+
+		- Marketing is an organizational function and a set of processes for creating, communicating, and delivering value to customers and for managing customer relationships in ways that benefit the organization and its stakeholders.
+		
+	-> What is Marketing Management?
+
+		- Marketing management is the art and science of choosing target markets and getting, keeping, and growing customers through creating, delivering, and communicating superior customer value.
+		
+	-> Needs, Wants, and Demands
+
+		- Need: State of felt deprivation including physical, social, and individual needs.
+			➢ Physical needs: Food, clothing, shelter, safety
+			➢ Social needs: Belonging, affection
+			➢ Individual needs: Learning, knowledge, self-expression
+			
+		- Want: Form that a human need takes, as shaped by culture and individual personality.
+											Wants + Buying Power = Demand
+								
+	-> Types of Needs (SURDS)
+		➢Stated needs, e.g. the customer wants an inexpensive car.
+		➢Unstated needs, e.g. the customer expects good service from the dealer.
+		➢Real needs, e.g. the customer wants a car whose operating cost, not its initial price, is low.
+		➢Delight needs, e.g. the customer would like the dealer to include an onboard navigation system.
+		➢Secret needs, e.g. the customer wants to be seen by friends as a savvy consumer.
+		
+	-> Types of Demands (Demand States and Marketing Tasks)
+		➢ Negative demand → counter marketing, e.g. insurance.
+		➢ Non-existent demand → stimulus, e.g. encyclopedias.
+		➢ Latent demand → developing, e.g. solar energy, Kindle.
+		➢ Declining demand → remarketing, e.g. Arm & Hammer and Listerine
+		➢ Irregular demand → synchro marketing e.g. seasonal products (raincoat, umbrella)
+		
+	-> Phases of Marketing
+		➢ The production concept:
+			➢The idea that consumers will prefer products that are widely available and inexpensive.
+			➢Focus: high production efficiency, low costs, and mass distribution.
+			➢It is useful when (1) the demand for a product exceeds the supply (e.g., developing countries such as China); (2) the product’s cost is too high.
+			
+		➢ The product concept:
+			➢The idea that consumers will prefer products that offer the most quality, performance, or innovative features.
+			➢Focus: making superior products and improving them over time.
+			➢Examples: digital camera, CPU.
+			
+		➢ The selling concept:
+			➢The idea that consumers will not buy enough of the firm’s products unless it undertakes a large-scale selling and promotion effort.
+			➢Focus: undertake an aggressive selling and promotion effort.
+			➢Practiced most aggressively with unsought goods (e.g., insurance).
+			
+		➢ The marketing concept:
+			➢The idea that the key to achieving organizational goals consists of the company being more effective than competitors in creating, delivering, and communicating superior customer value to its chosen target markets.
+			➢Three hurdles: organized resistance, slow learning, and fast forgetting.
+			
+			-> The Societal Marketing Concept
+				➢The idea that holds that a company should make good marketing
+				decisions by considering consumers’ wants, the company’s
+				requirements, consumers’ long-run interests, and society’s long-run
+				interests.
+
+		➢ The holistic marketing concept:
+			- Holistic marketing concept considers all the different parts of a business as one single entity. It is based on the premise that the whole is greater than the sum of its parts. As such, there is a shared aim and purpose for all the activities related to a business
+			- Holistic marketing is a marketing strategy that connects all the different marketing channels and departments of a company.
+			
+	-> Customer Markets:
+		➢The consumer market is made up of all the people who make decisions about what to buy and what not to buy.
+		➢Everyone who buys products or services is a consumer.
+		➢‘Market’ has a special meaning – relating to the likely demand for aproduct or service.
+		➢Over time the size of the population of a particular country may not change dramatically, so the consumer market is fixed in size.
+		
+	-> Types of Customer Markets:
+		➢Consumer markets:
+			➢ Companies selling mass consumer goods and services such as juices, cosmetics, athletic shoes, and air travel
+			➢ spend a great deal of time establishing a strong brand image by developing a superior product and packaging, ensuring its availability, and backing it with engaging communications and reliable service.
+
+		➢Business markets:
+			➢It allows them to sell products or services to other companies or organizations that resell them, use them in their products or services, or use them to support their works.
+			➢Companies selling business goods and services often face well-informed professional buyers skilled at evaluating competitive offerings.
+			➢Business buyers buy goods to make or resell a product to others at a profit. Business marketers must demonstrate how their products will help achieve higher revenue or lower costs.
+			➢Advertising can play a role, but the sales force, the price, and the company’s reputation may play a greater one.
+
+		➢Global markets:
+			- Companies in the global marketplace must decide which countries to enter;
+			➢ how to enter each (as an exporter, licenser, joint venture partner, contract manufacturer, or solo manufacturer);
+			➢ how to adapt product and service features to each country; how to price products in different countries; and
+			➢ how to design communications for different cultures.
+			➢ They face different requirements for buying and disposing of property; cultural, language, legal and political differences; and currency fluctuations. Yet, the payoff can be huge.
+			
+			
+# LEC 2:
+	- STP (Segmentation, Targeting, Positioning)
+	1. Choose which customer to serve
+		– Market Segmentation (Parts of market)
+		– Targeting (Segments to enter)
+	2. Decide how to serve those customers
+		– Product differentiation (what makes it difference from the competition)
+		– Marketing Positioning (how customers perceive the product)
+		
+	• Segmenting:
+		– Grouping customers by some criteria
+		
+		• Grouping prospective buyers into different segments based on shared characteristics.
+		
+		• It involves segmenting a heterogeneous market into a number of smaller homogeneous markets based on different customer characteristics that play a role in determining their wants and purchasing decisions.
+
+		- Reasons for segmenting the market:
+			➢Understanding customers’ need
+			➢Targeted marketing communication
+			➢Efficient use of resources
+			➢Competitive advantage		
+			
+		- 4 types of segmentation:
+			a) Geographic: countries, states, cities, villages, urban / rural, climatic conditions, density of population.
+				- market is divided on the basis of regions or geographies.
+				- helps to reach out to customers living in a similar region or area and have identical needs.
+				- choose to sell only in rural areas or villages
+				- seasonal products like umbrellas where it rains more
+				- FMCG (Fast Moving Consumer Goods) products in regions of high density of population
+				
+			b) Demographic: Age, Life Cycle, Gender, Income, Marital Status, Occupation
+				• Consumer preferences continually change with age.
+				• Almost all marketing campaigns target age-specific audiences.
+				• Babies, children, adolescents, adults, middle-age, and seniors.
+				• Age segmentation can also be generation-based :
+					- Gen X (1960s to 1980s)
+					- Gen Y (1980s to 2000s)
+					- Gen Z (After 2000)
+					- Gen Alpha (Early 2010s)
+				• If married or not
+				• Certain products are gender-specific (like male-deodorants, footwear, clothing)
+				• Income, ofcourse, if high-end product like expensive cars.
+				• Students, Businessmen, Retailers, Stock Traders specific
+				
+			c) Psychographic:
+				• Psychographic segmentation is one which uses people's lifestyle, their activities, interests as well as opinions to define a market segment.
+					– Lifestyle: Everyone has different clothing habits based on their lifestyle.The customer might be school going, college going, office going or other.
+					– Activities, Interest and Opinion: Different customers might have different activities and interests.
+					– Social Class: Different consumers fall in different social classes.
+					
+			c) Behavioral: Heavy user, Light user, Occasion oriented
+				1. Occasion oriented: When a product is used or purchased for a particular occasion only.
+				2. Usage oriented: The grouping can be on the basis of how much a product is being used/consumed by the customer. Accordingly, we call them heavy user or light user groups.
+				3. Loyalty oriented: retention rates of the consumers
+				4. Benefits sought: Consumer segmentation is also done on the basis of the different benefits perceived by different consumers.
+				
+				
+	• Targeting:
+		- Choosing which group(s) to sell
+		- After dividing the market into different segments, the company decide what all segments could be beneficial for them and are easy to penetrate.
+		- involves evaluatiing:
+			– Segment size and growth
+			– Segment structural attractiveness
+				• Level of competition in each segment
+				• Substitute products
+				• Power of buyers
+				• Powerful suppliers
+			– Company objectives and resources
+			
+		- based on scope of segment targeted, we have:
+					undifferentiated -> differentiated -> concentrated -> micromarketing
+					(broad marketing)				-> 					(narrow marketing)
+	
+
+# LEC 3:
+	- What is Brand Positioning? What space does the brand occupy in the mind of consumers with respect to competition?
+	- What consumers think about your brand / product?
+	- What all strong brands have in common is that they have a distinct brand positioning.
+	-> Brand Positioning
+		• No company can win if its products / services resemble every other product and offering.
+		• Each offering must represent the right kinds of things in the minds of the target market
+		
+	-> Positioning and value proposition
+		• Positioning is the act of designing a company’s offering and image to occupy a distinctive place in the minds of the target market.
+		• Value proposition: what are the primary benefits from buying the offering that our company offers?
+			– Functional benefits
+			– Monetary benefits
+			– Psychological benefits
+			– Holistic combination of the above
+			
+	-> Brand Substition Test to check how good the positioning is:
+		- With the brand substitution test, you can test a marketing campaign (like an online banner, a promo video, a poster, a billboard).
+			a) Simply replace your brand with the brand of a competitor.
+			b) If the marketing campaign does not work, it’s a strong brand positioning.
+			c) Successful brands are distinctive.
+		- basically checking if our USPs are actually USPs, and our campaign is unique from that of a competitor
+		
+	-> Analyzing Competitors:
+		- In each market and every niche, there will be competitors with whom you’ll have to compete. That’s why you need to study your competitors. It’s almost impossible to win the competition if you don’t know who you are competing with.
+		- Only if you are aware of your competitors, you can analyze them and develop effective market positioning strategies to gain market shares from them.
+		- Brands which may come into question could be brands which offer products:
+			a) like your product (within the same product category) or
+			b) that could substitute your product.
+		- Gather information about each competitor’s real and perceived strengths and weaknesses
+	
+	-> PoD (Points of Difference):
+		- Your points of difference are FAVORABLE and UNIQUE attributes that consumers:
+			a) evaluate positively,
+			b) strongly associate with your brand, and
+			c) cannot find in a different brand.
+		- Any type of attribute can be a point of difference, and strong brands usually have multiple of them.
+		- These are three proven criteria to identify relevant points of difference:
+			1) Desirable to consumers: your brand must be relevant to consumers, so you must give them a reason to believe why they need an attribute
+			2) Deliverable by the company: you need to give consumers a reason why your business can deliver the desired benefit
+			3) Differentiating from competitors: attributes must be different and superior to relevant competitors
+
+	-> PoP (Points of Parity):
+		- In each product category, there are particular attributes that a product has to have.
+		- That’s why it’s not only essential to establish differentiating points of difference, but equally important to match the competition on vital points of parity.
+		- Points of parity are attributes that are considered mandatory for a product category. Without these attributes, a brand would lack critical functions. So you may share them with competitors.
+		
+	-> Positioning statement:
+		- A positioning statement is a brief description of a product or service and an explanation of how it fulfills a particular need of the target market. (usually a slogan for the brand)
+		- The goal of a positioning statement is to align marketing efforts with a company's brand and value proposition.
+		- get crystal clear on a few key facets of your business:
+			– Who you serve
+			– What value you offer
+			– How you position your offer
+			– How you communicate your offer
+			– Why you're in business
+			– What makes you different from the competition
+		- use several parameters to establish brand position:
+			1) Category of product
+			2) Target customer/segment
+			3) Competition
+			4) Key differentiator/USP
+			5) Communicating to customers the brand position and the idea behind the brand.
+			
+			
+# LEC 4:
+	-> Marketing Mix
+		- Set of strategies/tactics/activities companies undertake to promote its product or brand inthe market.
+
+		-> Elements of marketing mix
+			• McCarthy classified various marketing activities into marketing-mix tools
+			• The four Ps of marketing: product, price, place, and promotion
+		
+		1) PRODUCT:
+			• An idea, a physical entity (a good), a service, or any combination of them which aims to satisfy individual or business objectives .
+			• Anything that can be offered to a market for attention, acquisition, use, or consumption and that might satisfy a want or need.
+				– Includes physical objects, services, events, persons, places, organizations, ideas or some combination thereof.
+				
+			-> Maslow's Hierarchy of needs
+				1) Self-actualization
+				2) Esteem
+				3) Love and belonging
+				4) Safety needs
+				5) Physiological needs
+			
+			-> Types of products:
+				1) Consumer goods: Consumed by people, final users of the product
+				2) Consumer services: Services for final users (eg: restaurants)
+				3) Producer goods: Goods produced for other businesses to use
+				4) Producer services: Services for other businesses (eg: lawyers)
+				
+			-> Levels of products:
+				1) Core Benefit:
+					• The core benefit is the fundamental need that the customer satisfies when they buy the product.
+					• It is important to think of the core benefit from the customersperspective. The easiest way to do this is to ask yourself, “Fundamentally, why is the customer buying this product?”.
+					• For example, the core benefit of a mobile phone is to provide amechanism to make telephone calls when away from your home or office.
+					• Note that products are rarely marketed using the core product. This is because core products offer no competitive advantage. but these benefits are what really define the use of the product. marketing is done on what is added onto these basic features
+					
+				2) Actual Product:
+					• The actual product is the product features and its design. Products typically have lots of features but very few actual benefits (core benefits) to the customer.
+					• Returning to our mobile phone example, then the actual product consists of the design and features of the phone, including:
+						–Dimensions.
+						–Color.
+						–Screen size.
+						–Bluetooth compatibility.
+						–App ecosystem size.
+						–Packaging.
+						
+				3) Augmented Product/Supplementary Services:
+					• The augmented product is any non-physical parts of the product.
+						–Typically, the augmented product includes such things as warranty and
+					customer service.
+					• The augmented product can be an important way to tailor your product to meet the needs of specific customers.
+					
+			
+			-> Product vs Brand:
+				- Product is made in factory, brand is something who's products are purchased
+				- Product can be copied, brand is unique
+				- Product can get outdated, successfully brand is timeless.
+				
+		2) PRICE:
+			- Price is the amount of money charged for a product or service.
+				• The sum of all the values that consumers give up in order to gain the benefits of having or using a product or service.
+
+			• Price is the only element in the marketing mix that produces revenue; all other elements represent costs.
+			• Discounts
+			• Allowances
+			• Credit Terms and Payment Periods
+			
+			a) Add up your variable costs (per product)
+			b) Add a profit margin
+			c) Don't forget about fixed costs (like machines, equipment)
+					
+		3) PLACE:
+			• How can a business ensure that its products reach existing and potential customers?
+			• How and where do customers prefer to buy the product?
+			• How important are factors such as stock availability, price, speed?
+			
+			• Objective of distribution
+				–To make products available in the right place at the right time in the right quantities
+			• Distribution Channel
+				–A distribution channel moves a product from production to consumption
+			
+			-> Levels in distribution channel:
+				- each party in a distribution channel is called an "intermediary"
+				1) Producer -> Customer
+				2) Producer -> Distributor/Agents
+				3) Producer -> Wholesaler -> Retailer -> Customer
+				
+		4) PROMOTION:
+			• Promotion is a marketing activity used to communicate with customers and potential customers to inform and persuade them to buy a business’s products.
+			• The aim of promotion is to create awareness, create interest , generate sales or create brand loyalty.
+				– Increase sales and market share
+				– Create brand image
+				– Introduce new products to the market
+				– To compete with competitors
+				
+			-> Two types of promotion:
+				a) Advertising:
+					• Informative advertising – give audience detailed information about a product. (like low-calory packed food available)
+					• Persuasive advertising – Tries to persuade audience that they need a product. (like the need to buy a mosquito racket in times of dengue)
+					• Social media, Radio (FM), Newspaper, Specialised Magazines, Billboards, TV, You tube, Public Events, Event Sponsorships and Appearances
+					
+				b) Sales Promotion:
+					• Price Reduction – Reduce the price to attract more customers 
+					• Gifts (shops that offer gift packaging on purchase)
+					• Products that comes with entry to a competition such as winning a prize. (like win a mobile in lottery)
+					• Point of sales (POS) display for demonstration (like displaying mobile phones in electronic shop)
+					• Free samples (like free samples of yoghurt in mall)
+					
+		-> 7 Ps of Service Marketing:
+			• Product
+			• Place
+			• Promotion
+			• Price
+			• People
+			• Process
+			• Physical Evidences
+			
+# LEC 5:
+	-> Product
+		• A set of tangible, intangible and associate attributes capable of being exchanged for a value with the ability to satisfy consumers and business needs.
+		• It is anything that can be offered to a market to satisfy the needs or wants of the customer.
+		• The products that are marketed include physical goods, services, experiences, events, person, place, properties, organization, information and ideas.
+		
+	-> Product Mix and Product Lines:
+		• Product Line:
+			– A group of individual products that are closely related in some way.		
+		• Product Mix:
+			– the total number of product lines and individual products or services offered by a company.
+		• Individual Product:
+			– Any brand or variant of a brand in a product line.
+			
+		-> Product Mix Characteristics:
+			• Product Mix Width:
+				– The number of product lines in the product mix.
+			• Product Line Length:
+				– The number of products in a product line.
+			• Product Mix Consistency:
+				– The relatedness of the different product lines in a product mix.
+					
+	-> PLC (Product Life Cycle):
+		• ..involves the stages through which a product goes from the time it is introduced in the market till it leaves the market.
+		• A company’s positioning and differentiation strategy must change as its product, market, and competitors change over the PLC.
+		
+		-> Stages in PLC:
+			1. Introduction—A period of slow sales growth as the product is introduced in the market. Profits are nonexistent because of the heavy expenses of product introduction.
+				– establish a clear brand identity
+				– connect with the right partners to promote your product
+				– set up consumer tests, or provide samples or trials to key target markets
+				– price the product or service as high as you believe you can sell it, and to reflect the quality level you are providing
+				
+			2. Growth—A period of rapid market acceptance and substantial profit improvement.
+				– mainly to improve profits
+				– improving product quality
+				– adding new product features or support services to grow your market share
+				– entering new markets segments
+				– keeping pricing as high as is reasonable to keep demand and profits high
+				– increasing distribution channels to cope with growing demand
+				– shifting marketing messages from product awareness to product preference
+				– skimming product prices if your profits are too low
+					- Price skimming is a pricing strategy in which a firm charges a high initial price and then gradually lowers the price to attract more price-sensitive customers
+					- This approach contrasts with the penetration pricing model, which focuses on releasing a lower-priced product to grab as much market share as possible.
+					
+			3. Maturity—A slowdown in sales growth because the product has achieved acceptance by most potential buyers. Profits stabilize or decline because of increased competition.
+				• When your sales peak, your product will enter the maturity stage.
+				• This often means that your market will be saturated, and you may find that you need to change your marketing tactics to prolong the life cycle of your product.
+				• Common strategies that can help during this stage fall under one
+				of two categories:
+					– market modification - this includes entering new market segments, redefining target markets, winning over competitor's customers, converting non-users
+					– product modification - for example, adjusting or improving your product's features, quality, pricing and differentiating it from other products in the marking
+			
+			4. Decline—Sales show a downward drift and profits erode.
+				• Declining sales and profits.
+				• This can be caused by changes in consumer preferences, technological advances and alternatives on the market.
+					– Harvesting strategy: reduction or a termination of investments in a product, product line
+					– Let the product die its own death
+					– Find another use for the product
+		
+		
+# LEC 6:
+	-> The Promotion Mix
+		- The promotion mix is the method of creating awareness about the product and services, build relationship with the customer through specific blend of advertising, public relations, personal selling, and direct- marketing tools.
+		- Major Promotional Tools:
+			1) Advertising:
+				- Advertising is any paid form of non-personal presentation and promotion of ideas, goods, or services by an identified sponsor
+					• Broadcast
+					• Print
+					• Internet
+					• Outdoor
+					
+			2) Sales Promotion:
+				- Sales promotion is the short-term incentives to encourage the purchase or sale of a product or service
+				- Sales promotions often attract brand switchers (those who are not loyal to a specific brand) who are looking primarily for low price and good value.
+					• Discounts
+					• Coupons
+					• Displays
+					• Demonstrations
+					
+			3) Personal Selling:
+				- Personal selling is the personal presentation by the firm’s sales force for the purpose of making sales and building customer relationships
+				- Personal selling happens when companies and business firms send out their salesmen to use the sale force and sell the products and services by meeting the consumer face – to – face.
+					• Sales presentations
+					• Trade shows
+					• Incentive programs
+					
+			4) Publicity
+			5) Public Relations:
+				- Public relations involves building good relations with the company’s various publics by obtaining favorable publicity, building up a good corporate image, and handling or heading off unfavorable rumors, stories, and events
+				-  A public relations agency is responsible for generating media coverage that creates a favorable public image for its clients (in this case, the company that wishes to be publicized).
+					• Press releases
+					• Sponsorships
+					• Special events
+					• Web pages
+					
+			6) Direct Marketing:
+				- Direct marketing involves making direct connections with carefully targeted individual consumers to both obtain an immediate response and cultivate lasting customer relationships—through the use of direct mail, telephone, direct-response television, e-mail, and the Internet to communicate directly with specific consumers
+				- Mail, email, social media, and texting campaigns are among the delivery systems used.
+				- Avoiding mass media distributions like news, television, radio, magazines
+					• Catalog
+					• Telemarketing
+					• Kiosks
+					
+			7) Word-of-Mouth
+			8) Online Marketing
+			
+		-> Steps in Developing Effective Marketing Communication:
+			a) Identify target audience
+			b) Reason to communicate to them and objectives
+			c) Design the message:
+				- Message content is an appeal or theme that will produce the desired response
+					• Rational appeal: relates to the audience’s self-interest
+					• Emotional appeal: is an attempt to stir up positive or negative emotions
+					to motivate a purchase
+					• Moral appeal: is directed at the audience’s sense of right and proper
+					
+			d) Choose media to use for communication:
+				- Personal communication is effective because it allows personal addressing and feedback
+				- Opinion leaders are people within a reference group who, because of their special skills, knowledge, personality, or other characteristics; exerts social influence on others. Opinion leaders are individuals who obtain more media coverage than others and are especially educated on a certain issue
+				- Buzz marketing involves cultivating opinion leaders and getting them to spread information about a product or service to others in their communities. utilises word-of-mouth to spread the product among groups.
+				
+			e) Identify source through which communication will happen (agency):
+				- The message’s impact on the target audience is affected by how the audience views the communicator
+					• Celebrities
+						– Athletes
+						– Entertainers
+					• Professionals
+						– Health care providers
+				
+		- customer feedback loop. feedback gathering, feedback storage, product improvement, and again.
+		
+# LEC 7:
+	-> Consumer Buying Behaviour:
+		• Habitual buying behaviour: occurs when involvement is low and differences between brands are small. Consumers in this case usually do not form a strong attitude toward a brand but select it because it is familiar. Milk or bread buying
+		
+		• variety-seeking behaviour: describes a consumer's desire to search for alternative products even if she or he is satisfied with a current product
+		
+		• dissonance-reducing buying behaviour: occurs when a consumer is highly involved in the purchase of an item, but they have a hard time pinpointing the difference between various brands. financial services products, such as insurance
+		
+		• complex buying behaviour: occurs when the consumer is highly involved with the purchase and when there are significant differences between brands. purchasing expensive goods or services such as a house, a car, an education course, etc.
+		
+		• Impulsive buying behaviour: is the tendency of a customer to buy goods and services without planning in advance.
+		
+	-> Consumer Behaviour (CB):
+		• CB is the study of HOW individuals, groups, and organizations select, buy, use, and dispose goods, services, ideas, or experiences to satisfy their needs and wants.
+		• Consists of how the consumer's emotions, attitudes, and preferences affect buying behaviour.
+		• A consumer’s buying behavior is influenced by
+		
+		1) Cultural Factors:
+			• Cultural factors comprise of set of values and ideologies of a particular community or group of individuals.
+			• Values of an individual.
+			• Each culture consists of smaller subcultures that provide more specific identification and socialization for their members.
+			• Subcultures include nationalities, religions, racial groups, and geographic regions.
+			• Generally, the people belonging to the same class are said to be sharing the similar interest, value and the behavior.
+				– upper, upper-middle, middle, working and lower
+			• Example: Females staying in West Bengal or Assam would prefer buying sarees as compared to Westerns.
+			
+		2) Social Factors:
+			• Social factors such as reference groups, family, and social roles and status affect our buying behavior.
+			• Reference groups: all the groups that have a direct (face-to- face) or indirect influence on their attitudes or behavior.
+				• Primary reference groups: with whom person interacts fairly, continuously and informally. E.g.: family, friends, neighbors, and coworkers.
+				• Secondary reference groups: religious, professional, and online influencers
+			• Reference group expose an individual to new behaviors and lifestyle; influence attitudes and self-concept; create social pressure.
+		
+		3) Personal Factors:
+			• Age and stage in the life cycle: Our taste in food, clothes, furniture, and recreation is often related to our age.
+			• Occupation and economic circumstances: Marketers try to identify the occupational groups that have above-average interest in their products and services and even tailor products for certain occupational groups.
+				– Business suit
+				– Banker’s collar shirt
+			• Both product and brand choice are greatly affected by economic circumstances like spendable income
+		
+		
+# LEC 8:
+	-> Rural Marketing:
+		• About two-thirds of the rural people depend upon agriculture and related activities for their livelihood.
+		• A marketing system that involves the planning, development, pricing, and distribution of goods and services so that people in rural areas can access basic products at fair prices.
+		- the right product, at the right price, at the right place, at the right time, through the right medium should reach the right customer.
+		
+	-> Segmentation of Rural Market (Thomson rural market index):
+		1) Occupational Segmentation:
+			i. Artisans, farm labourers – Consisting of carpenters, blacksmiths, craftsmen and labourers.
+			ii. Small farmers – Farmers with very small holdings or with a share in jointly held farms.
+			iii. Tenant farmers – Tenant farmers who work on leased or rented land to share the crops and income with owners of the land.
+			iv. Medium level farmers – Farmers with economically efficient size of landholdings.
+			v. Large farmers – Zamindars, rich money-lenders and people with very large, ancestral land. They also tend to be local leaders and politicians, with links in urban areas, giving their land on lease to tenant farmers.
+			
+		2) Income and Savings
+			– High income: Those belonging to upper strata—landlords, large farmers, businessmen and traders. Much of their buying is done from nearby towns since they have large vehicles like jeeps and tractor trolleys.
+			– Middle income
+			– Large middle income: Large middle income families also buy many products in bulk. Food items like grains are purchased in bulk while fresh produce is bought on a daily or weekly basis.
+			– Small middle income: families are likely to buy most of their needs from the local market. The middle income group is likely to be more dependent on local stores than the high income group.
+			– Lower income: depend on local stores and markets for all their needs. Local shopkeepers provide them credit, advice and easy delivery, which suits these consumers.
+			
+		3) Ownership of goods: ownership for categories like motorcycle, car, television and refrigerator shows an increasing trend, showing the increasing prosperity of people over the years.
+		
+		4) Socioeconomic class:
+			– Chief wage earner
+			– Type of house they live
+			
+	-> Characteristics of Rural Marketing:
+		- For rural market, a marketing manager has three options –
+			– one is, to design marketing programme common for all types of customers [rural + urban]
+			– the second is, to design marketing programme purely for rural customers
+			– the third is, to design marketing programme for customers residing in rural but reacting as if they were global.
+		
+		1) Product-related features of rural segment:
+			• Rural markets (buyers) believe in product utility rather than status and prestige.
+				– However, they like novel products with distinctive features.
+			• They like simple and long-life products.
+			• They respond to those products that suit their religious faith, and social norms and customs
+			• They strongly prefer such products that can change and improve their life-style.
+			
+		2) Price-related features of rural segment:
+			• Price-sensitive and highly influenced by level of pricing.
+				– Price is the strongest factor that affects their buying decision.
+			• They buy those products which are low in price and medium in quality.
+			• They are easily attracted by price discounts and rebates.
+			• They prefer credit facility.
+				– They normally have strong desire to postpone payment for certain period.
+			• Some middle-class rural customers are attracted by installment and loan facility.
+			
+	-> Response to Product Promotion:
+		• Rural customers are highly attracted by local and regional promotional efforts.
+			– They can be appealed by visual or pictorial advertisements published in local and regional
+			languages.
+		• Their reference groups consist of educated and non-educated family members and relatives living in urban areas and foreign countries as well.
+		• Personal selling seems more influential to convince rural mass.
+		• They are attracted by such sales promotional tools or articles which are useful in their routine life such as knife, gas lighter, rings, key-chains, caps, photos of local actors, calendars and cards with religious impression, etc.
+		
+	-> Response to Distribution:
+		• Rural customers strongly favour relations.
+			– They continue buying from known and established retailers who maintain close family relations with them.
+		• Mostly they buy from retail outlets situated in rural or sub-urban areas.
+			– However, some rural customers like to buy products from nearby cities also.
+		• They are not highly interested in home-delivery.
+			– They want immediate possession.
+			– They lack patience.
+			– They are found eager to possess and use the products immediately.
+			
+
+# LEC 9:
+	-> Digital Marketing:
+		- The use of technology-intensive platforms such as the internet, mobile networks and devices, and social media to engage directly with carefully targeted individual consumers, consumer communities, and businesses.
+		
+		-> Benefits of Digital Marketing to Buyers and Sellers
+			- Convenience
+			- Brand engagement and community
+			- Interactive and immediate
+			- Low-cost, efficient, fast alternative to reach markets
+			- Flexible
+			- Access to buyers not reachable through other channels
+			- Opportunities for real-time marketing
+			- Linking brands to important moments and trending events	
+				- Knowing the Digital Consumer
+			
+		- Knowing the Digital consumer personas—detailed, nuanced, and tangible representations of prototypical consumers to be targeted by the digital campaign.
+		
+		- To effectively market to consumers with the right marketing content at the right place and time, marketers must understand which channels consumers are using at each stage of the customer journey.
+		
+		- Online marketing is marketing via the internet using company websites, online ads and promotions, email, online video, and blogs. 
+		
+		- Online advertising is advertising that appears while consumers are browsing online and includes display ads, search-related ads,online classifieds, and other forms. Email marketing involves sending highly targeted, highly
+personalized, relationship-building marketing messages via email.
+
+		- Online video marketing involves posting digital video content on brand websites or social media sites such as YouTube, Facebook, and others.
+		
+		- Viral marketing is the digital version of word-of-mouth marketing: videos, ads, and other marketing content that are so infectious that customers will seek them out and pass them along to friends.
+		
+		- Blogs are online journals where people and companies post their thoughts and other content, usually related to narrowly defined topics.
+		
+		- Social media: Independent and commercial online social networks where people congregate to socialize and share messages, opinions, pictures, videos, and other content
+			Advantages:
+				- Targeted and personal
+				- Interactive
+				- Immediate and timely
+				- Cost effective
+				- Engagement and social sharing capabilities
+				
+		- Mobile marketing delivers messages, promotions, and other content to on-the-go consumers through mobile phones, smartphones, tablets, and other mobile devices. For consumers, a smartphone or tablet can be a handy shopping companion. As a result, mobile advertising spending is surging.
+		
+		- Omni-channel marketing: Creating a seamless cross-channel buying experience that integrates in-store, online, and mobile shopping.
+		
+		- Public Policy issues:
+			- Irritation includes annoying and offending customers.
+			- Unfairness includes taking unfair advantage of impulsive or less-sophisticated buyers.
+			- Deception includes “heat merchants” who design mailers and write copy designed to mislead consumers.
+			- Fraud includes identity theft and financial scams.
+			- Consumer privacy involves concerns that marketers may have too much information and use it to take unfair advantage.
+			
+		- The ad industry has issued a set of online and mobile advertising principles through the DIGITAL ADVERTISING ALLIANCE that call for digital marketers to provide transparency and choice to consumers if online data are collected or used for targeting interest-based advertising.
+		
+		- General Data Protection Regulation (G D P R)
+		- Children’s Online Privacy Protection Act (C O P P A)
+		
+
+# LEC 10:
+	-> Service Marketing:
+		• Services are intangible economic activity offered by one party to another, often time based.
+		• Services involve a form of rental, offering benefits without transfer of ownership
+			– Include rental of goods
+			– Marketing tasks for services differ from those involved in selling goods and transferring ownership
+			
+		• Services can provide higher profit margins and growth potential than products
+		• Customer satisfaction and loyalty are driven by service excellence
+		• Services can be used as a differentiation strategy in competitive markets
+		• Service includes every interaction between any customer and anyone representing
+the company, including:
+			1) Dealers
+			2) Salespeople
+			3) Service Employees
+			4) Receptionists
+			5) Website, e-channel interactions
+			6) Billing and Accounting Personnel
+		• Services Dominate Economy in Most Nations
+		• Most New Jobs are Generated by Services
+			– Fastest Growth Expected in Knowledge-Based Industries
+			– Many New Jobs are Well-Paid Positions Requiring Good Educational Qualifications
+		
+	-> Characteristics of Services
+		• Intangibility – Most services cannot be seen, touched, held, or put on a shelf.
+		• Inseparability – For most services, the production and consumption of the service occur simultaneously.
+		• Variability – It is hard for a service organization to standardize the quality of its service performance.
+		• Perishability – Most services cannot be produced or stored before consumption. They exist only at the time of their production.
+		• Rental/Access – Services provide temporary possession or access instead of ownership.
+		
+	-> Forces transforming the Service Economy:
+		1) Government Policies
+		2) Social Changes
+		3) Business Trends
+		4) Advances in IT
+		5) Globalization
+		
+	-> Four Broad Categories of Services:
+		• Based on differences in nature of service act (tangible/intangible) and who or what is direct recipient of service (people/possessions), there are four categories of services:
+			1) People processing: (eg. Haircut, Healthcare)
+				- Customers must:
+					- physically enter the service factory
+					- co-operate actively with the service operation
+					- Managers should think about process and output from customer’s perspective
+					
+			2) Possession processing: (eg. Fuel refuelling, recycling)
+				- Customers are less physically involved compared to people processing services
+				- Involvement is limited
+				- Production and consumption are separable
+				
+			3) Mental stimulus processing: (eg: Education)
+				- Ethical standards required when customers who depend on such services can potentially be manipulated by suppliers
+				- Physical presence of recipients not required
+				- Core content of services is information-based
+				
+			4) Information processing: (eg: Accounting, Banking)
+				- Information is the most intangible form of service output
+				- But may be transformed into enduring forms of service output
+				- Line between information processing and mental stimulus processing may be blurred.
+				
+
+# LEC 11:
+	-> Channels of Distribution:
+		• Channel of distribution is the path through whichproducts move from the place of production to the place of ultimate consumption. It is the connecting link between the producer and the consumer to sell the products.
+		• It creates the utilities of time, place and possession by bridging the gap between the point of production and the point of consumption.
+		
+	-> Functions of Distribution Channels:
+		1) Sorting: The middlemen collect goods from various sources. These goods are different in quality, size, nature, colour etc. These goods are then sorted based on their features.
+		2) Accumulation: This function involves accumulation of goods into larger homogeneous stocks, which maintain continuous flow of supply. Basically adding more products into the sorted groups is called accumulation.
+		3) Allocation: Allocation involves breaking homogeneous stock into smaller marketable lots.
+		4) Assorting: Middlemen procure variety of goods from different sources and deliver them in combinations desired by the customers.
+		5) Product promotion: The middlemen advertise the product kept with them. They also do certain sales promotion activities like demonstrations; special displays etc. to increase the sale of products.
+		6) Negotiation: They negotiate and try to reach agreement on price and other terms of sale.
+		7) Risk taking: They bears the risk of changes in demand, damage in transit, theft, spoilage, destruction etc.
+
+	-> Types of Distribution Channels:		
+		- The number of intermediaries determines the length of a channel. It is also called channel levels or type of channels.
+		1) Direct Channel/ZERO level/ Direct marketing:
+			- Direct channel of distribution means making goods available to consumers directly by the manufacturer, without involving any intermediary. Eg: Mail order selling, Internet selling, Selling through own sales force/ own retail outlets ( eg. Bata, McDonald, Eureka Forbes etc.)
+			
+		2) Indirect Channels
+ 			- Indirect channels of distribution mean making goods available to the consumers by employing one or more intermediaries. Following are the different types of channels under indirect channels
+			1.One level:
+				- In this type, the intermediary is the retailer firm directly supplies the product to retailer who sells the product directly to customers. Eg: Maruti Udyog sells its cars through company approved retailers
+				
+			2.Two level channels:
+				- Under this channel, the manufacturer sells to one or more retailers who in turn sell to the ultimate consumers. This is the most commonly adopted distribution network for most consumer goods like soaps, oils, clothes,rice,sugar etc
+				
+			3.Three level channels:
+				- This is the longest Channel of distribution. In this path, one more middlemen is added . So there are three intermediaries’ involved-agents, wholesalers and retailers. Manufacturers use their own selling agents or brokers who connect them with wholesalers and then the retailers.
+				
+		
