@@ -136,7 +136,7 @@
 					– Activities, Interest and Opinion: Different customers might have different activities and interests.
 					– Social Class: Different consumers fall in different social classes.
 					
-			c) Behavioral: Heavy user, Light user, Occasion oriented
+			d) Behavioral: Heavy user, Light user, Occasion oriented
 				1. Occasion oriented: When a product is used or purchased for a particular occasion only.
 				2. Usage oriented: The grouping can be on the basis of how much a product is being used/consumed by the customer. Accordingly, we call them heavy user or light user groups.
 				3. Loyalty oriented: retention rates of the consumers
