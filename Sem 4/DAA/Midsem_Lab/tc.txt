@@ -1,0 +1,3 @@
+str1 = "abc" str2 = "abdc" output=1
+
+str1 = "abcdef" str2 = "aghbidef" output=3
