@@ -1,0 +1,3 @@
+/home/vbuntu/Desktop/Vatsal/college/Sem 5/CGV/Assignment/CMakeFiles/ASCII_Art.dir
+/home/vbuntu/Desktop/Vatsal/college/Sem 5/CGV/Assignment/CMakeFiles/edit_cache.dir
+/home/vbuntu/Desktop/Vatsal/college/Sem 5/CGV/Assignment/CMakeFiles/rebuild_cache.dir

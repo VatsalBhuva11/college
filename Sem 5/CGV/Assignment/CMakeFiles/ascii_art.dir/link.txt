@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/ascii_art.dir/IIT2022004_ascii_art.cpp.o -o ascii_art 
