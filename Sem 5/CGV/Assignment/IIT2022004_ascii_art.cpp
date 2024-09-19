@@ -1,4 +1,4 @@
-#include <opencv2/opencv.hpp>
+#include <GL/glut.h>
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -25,6 +25,12 @@ int main()
         return -1;
     }
 
+    /*
+    The image is resized to a specific size based on the dimensions
+    (3.5 inches by 4.5 inches) and a DPI (Dots Per Inch) value of 300.
+    The conversion from inches to pixels is done using the formula
+    pixels = inches * dpi / 2.54, where 2.54 is the number of centimeters in an inch.
+    */
     int dpi = 300;
     int width_px = static_cast<int>(3.5 * dpi / 2.54);
     int height_px = static_cast<int>(4.5 * dpi / 2.54);

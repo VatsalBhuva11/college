@@ -51,7 +51,7 @@ int main(int argc, char **argv)
     glutCreateWindow("Cube");
 
     glClearColor(0.0, 0.0, 0.0, 0.0);         // black background
-    glOrtho(0.0, 20.0, 0.0, 20.0, -1.0, 1.0); // setup a 10x10x2 viewing world
+    glOrtho(0.0, 20.0, 0.0, 20.0, -1.0, 1.0); // setup a 20x20x2 viewing world
 
     glutDisplayFunc(display);
     glutMainLoop();

@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cryptopp/integer.h>
-#include <cryptopp/osrng.h>
 
 using namespace std;
 using namespace CryptoPP;
@@ -8,11 +7,19 @@ using namespace CryptoPP;
 int main()
 {
     // Define two large integers using CryptoPP::Integer
-    Integer a("1234567890123456789012345678901234567890");
-    Integer b("9876543210987654321098765432109876543210");
+    string firstNum, secondNum;
+    cout << "Enter first number: ";
+    cin >> firstNum;
+    cout << "Enter second number: ";
+    cin >> secondNum;
+    Integer a(firstNum.c_str());
+    Integer b(secondNum.c_str());
 
+    string modStr;
+    cout << "Enter modulus: ";
+    cin >> modStr;
     // Define the modulus for modular arithmetic
-    Integer modulus("10000000000000000000000000000000000000007");
+    Integer modulus(modStr.c_str());
 
     // Perform modular addition: (a + b) % modulus
     Integer result = (a + b) % modulus;
